@@ -59,12 +59,18 @@ public class PathFinder : MonoBehaviour
             }
             n.colour = 2;
             if (count >= maxCount){
-                if(!foundEnd)
+                if(!foundEnd){
+                    path.Clear();
                     return;
+                }
                 else {
                     if (pathStack.Count == 0) addPath();
                     return;
                 }
+            }
+            if(!foundEnd){
+                path.Clear();
+                return;
             }
         }
     }

@@ -11,6 +11,10 @@ public class Node : MonoBehaviour
 
     public Graph graph;
 
+    private LinkedList<Vector3> positions; //
+    private LinkedList<Node> connections;
+    private Node currentConnection;
+
     private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
     private Node pi; //used to find the path -> predecessor node
 
