@@ -26,6 +26,7 @@ public class PathFinder : MonoBehaviour
         sNode = currNode;
         eNode = destNode;
         Debug.Log("Curr node: " + sNode.name + " End node: " + eNode.name);
+        
         resetNodes();
         pathBFS();
 
@@ -90,6 +91,7 @@ public class PathFinder : MonoBehaviour
 
     private void resetNodes(){
         q.Clear();
+        count = 0;
         while (explored.Count != 0){
             Node n = explored.Dequeue();
             Debug.Log("reseting the values of node " + n.name);
