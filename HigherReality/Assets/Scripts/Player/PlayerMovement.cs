@@ -89,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         // find the best path to the any Nodes under the Clickable; gives the user some flexibility
         List<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
+        // Path<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
         // FindBestPath();
         
