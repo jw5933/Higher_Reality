@@ -15,8 +15,8 @@ public class Node : MonoBehaviour
     private LinkedList<Node> connections;
     private Node currentConnection;
 
-    private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
-    private Node pi; //used to find the path -> predecessor node
+    [SerializeField]private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
+    [SerializeField]private Node pi; //used to find the path -> predecessor node
 
     // invoked when Player enters this node
     public UnityEvent gameEvent;
