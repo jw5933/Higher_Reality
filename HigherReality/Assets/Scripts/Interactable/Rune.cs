@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject debugObj;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject getObject{get{return this.gameObject;}}
 }
