@@ -46,6 +46,9 @@ MonoBehaviour:
   neighbours: []
   excludedNodes: []
   graph: {fileID: 0}
+  gameEvent:
+    m_PersistentCalls:
+      m_Calls: []
   gizmoRadius: 0.1
   defaultGizmoColor: {r: 0, g: 0, b: 0, a: 1}
   selectedGizmoColor: {r: 0, g: 0, b: 1, a: 1}
@@ -96,6 +99,9 @@ MonoBehaviour:
   neighbours: []
   excludedNodes: []
   graph: {fileID: 0}
+  gameEvent:
+    m_PersistentCalls:
+      m_Calls: []
   gizmoRadius: 0.1
   defaultGizmoColor: {r: 0, g: 0, b: 0, a: 1}
   selectedGizmoColor: {r: 0, g: 0, b: 1, a: 1}
@@ -209,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efff4382c2bf4dcd9a87d64b7991157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childNodes: []
+  childNode: {fileID: 0}
+  nodes: []
 --- !u!1 &5168830347190599280
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +263,9 @@ MonoBehaviour:
   neighbours: []
   excludedNodes: []
   graph: {fileID: 0}
+  gameEvent:
+    m_PersistentCalls:
+      m_Calls: []
   gizmoRadius: 0.1
   defaultGizmoColor: {r: 0, g: 0, b: 0, a: 1}
   selectedGizmoColor: {r: 0, g: 0, b: 1, a: 1}
@@ -402,7 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efff4382c2bf4dcd9a87d64b7991157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childNodes: []
+  childNode: {fileID: 0}
+  nodes: []
 --- !u!1 &9174384845629945172
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,4 +523,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efff4382c2bf4dcd9a87d64b7991157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childNodes: []
+  childNode: {fileID: 0}
+  nodes: []

@@ -26,6 +26,7 @@ public class PathFinder : MonoBehaviour
         sNode = currNode;
         eNode = destNode;
         Debug.Log("Curr node: " + sNode.name + " End node: " + eNode.name);
+        
         resetNodes();
         pathBFS();
 
@@ -33,20 +34,19 @@ public class PathFinder : MonoBehaviour
     }
 
     private void pathBFS(){ //iterate through all possible paths, stopping when we've reached the goal.
+        explored.Enqueue(sNode);
+        q.Enqueue(sNode);
         sNode.colour = 1;
         sNode.predNode = null;
-
-        q.Enqueue(sNode);
-        explored.Enqueue(sNode);
         while(!foundEnd && q.Count != 0 && count < maxCount){
             count++;
             Node n = q.Dequeue();
             foreach (Node v in n.neighbours){
                 if (v.colour == 0){
                     // Debug.Log(n.name + "'s neighbour " + v.name + " has been reached");
+                    if(!explored.Contains(v)) explored.Enqueue(v);
                     v.colour = 1;
                     v.predNode = n;
-                    if(!explored.Contains(v)) explored.Enqueue(v);
 
                     if(!foundEnd && v == eNode){ //stop when we've found the destination
                         foundEnd = true;
@@ -59,13 +59,19 @@ public class PathFinder : MonoBehaviour
             }
             n.colour = 2;
             if (count >= maxCount){
-                if(!foundEnd)
+                if(!foundEnd){
+                    path.Clear();
                     return;
+                }
                 else {
                     if (pathStack.Count == 0) addPath();
                     return;
                 }
             }
+        }
+        if(!foundEnd){
+            path.Clear();
+            return;
         }
     }
 
@@ -85,6 +91,7 @@ public class PathFinder : MonoBehaviour
 
     private void resetNodes(){
         q.Clear();
+        count = 0;
         while (explored.Count != 0){
             Node n = explored.Dequeue();
             Debug.Log("reseting the values of node " + n.name);
@@ -93,17 +100,4 @@ public class PathFinder : MonoBehaviour
         }
         foundEnd = false;
     }
-
-    //drawing the pathStack
-    // private void OnDrawGizmos(){
-    //     if (foundEnd){
-    //         foreach (Node n in pathStack){
-    //             Gizmos.color = Color.green;
-    //             Gizmos.DrawCube(n.transform.position, new Vector3(0.25f, 0.25f, 0.25f));
-    //             Gizmos.color = Color.yellow;
-    //                 if (n.predNode != null)
-    //                     Gizmos.DrawLine(n.transform.position, n.predNode.transform.position);
-    //         }
-    //     }
-    // }
 }
