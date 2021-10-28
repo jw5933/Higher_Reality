@@ -8,13 +8,13 @@ public class PathFinder : MonoBehaviour
     int count = 0;
 
     Graph graph; //to get all the nodes
-    [SerializeField]private Node sNode; //the node the player is on; start node
-    [SerializeField]private Node eNode; //the place the player wants to go; end node
+    private Node sNode; //the node the player is on; start node
+    private Node eNode; //the place the player wants to go; end node
 
-    [SerializeField]private Queue<Node> q = new Queue<Node>();
-    [SerializeField]private Queue<Node> explored = new Queue<Node>();
+    private Queue<Node> q = new Queue<Node>();
+    private Queue<Node> explored = new Queue<Node>();
     private Stack<Node> pathStack  = new Stack<Node>();
-    [SerializeField]private List<Node> path = new List<Node>();
+    private List<Node> path = new List<Node>();
 
     public bool foundEnd;
 
@@ -22,10 +22,10 @@ public class PathFinder : MonoBehaviour
     public Node endNode{get{return eNode;} set {eNode = value;}}
 
     public List<Node> findPath(Node currNode, Node destNode){
-        Debug.Log("Curr node: " + currNode.name + " End node: " + destNode.name);
+        // Debug.Log("Curr node: " + currNode.name + " End node: " + destNode.name);
         sNode = currNode;
         eNode = destNode;
-        Debug.Log("Curr node: " + sNode.name + " End node: " + eNode.name);
+        // Debug.Log("Curr node: " + sNode.name + " End node: " + eNode.name);
         
         resetNodes();
         pathBFS();
@@ -50,7 +50,7 @@ public class PathFinder : MonoBehaviour
 
                     if(!foundEnd && v == eNode){ //stop when we've found the destination
                         foundEnd = true;
-                        Debug.Log("Found path now adding path");
+                        // Debug.Log("Found path now adding path");
                         addPath();
                         return;
                     }
@@ -94,7 +94,7 @@ public class PathFinder : MonoBehaviour
         count = 0;
         while (explored.Count != 0){
             Node n = explored.Dequeue();
-            Debug.Log("reseting the values of node " + n.name);
+            // Debug.Log("reseting the values of node " + n.name);
             n.predNode = null;
             n.colour = 0;
         }
