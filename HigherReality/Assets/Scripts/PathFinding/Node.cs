@@ -5,21 +5,35 @@ using UnityEngine.Events;
 
 public class Node : MonoBehaviour
 {
-    public List<Edge> edges = new List<Edge>();
+    //rune architecture
+    [SerializeField] private Rune myRune;
+    public Rune rune{get{return myRune;} set{myRune = value;}}
+
+    //interaction
+    [SerializeField] private bool isMoving;
+    [SerializeField] private float blockSpeed;
+    [SerializeField] private Node interactable;
+    [SerializeField] private List<Vector3> positions = new List<Vector3>();
+    [SerializeField] private List<Node> connections = new List<Node>();
+    [SerializeField] private int currConnection = 0;
+
+    public GameObject getObject{get{return this.gameObject;}}
+    public Node getInteractable{get{return interactable;}}
+
+
+
+    //pathfinder
+    private List<Edge> edges = new List<Edge>(); //only for gizmos
     public List<Node> neighbours = new List<Node>();
     [SerializeField] private List<Node> excludedNodes = new List<Node>();
 
     public Graph graph;
 
-    private LinkedList<Vector3> positions; //
-    private LinkedList<Node> connections;
-    private Node currentConnection;
-
     [SerializeField]private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
-    [SerializeField]private Node pi; //used to find the path -> predecessor node
+    private Node pi; //used to find the path -> predecessor node
 
     // invoked when Player enters this node
-    public UnityEvent gameEvent;
+    // public UnityEvent gameEvent;
 
     //let other classes get set the pNode
     public Node predNode { get { return pi; } set { pi = value; } }
@@ -27,7 +41,6 @@ public class Node : MonoBehaviour
 
     public static Vector3[] neighbourDir = //{east, west, north, south}
     {new Vector3(1f, 0f, 0f), new Vector3(-1f, 0f, 0f), new Vector3(0f, 0f, 1f), new Vector3(0f, 0f, -1f)};
-
 
     public void findNeighbours(){
         foreach(Vector3 v in neighbourDir){
@@ -42,6 +55,41 @@ public class Node : MonoBehaviour
         }
     }
 
+    public void moveToNext(){
+        if(!isMoving){
+            Vector3 a = this.transform.parent.transform.position;
+            currConnection = currConnection++ >= positions.Count-1 ? 0 : currConnection++;
+            Debug.Log(currConnection);
+            StartCoroutine(moveFromTo(a, positions[currConnection], blockSpeed));
+        }
+    }
+
+    IEnumerator moveFromTo(Vector3 a, Vector3 b, float speed){
+        removeNeighbours();
+        isMoving = true;
+        float step = (speed / (a - b).magnitude) * Time.fixedDeltaTime;
+        float t = 0;
+        while (t <= 1.0f){
+            t += step; // Goes from 0 to 1, incrementing by step each time
+            this.transform.parent.transform.position = Vector3.Lerp(a, b, t); // Move objectToMove closer to b
+            yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
+        }
+        this.transform.parent.transform.position = b;
+        updateNeighbour(connections[currConnection]);
+        isMoving = false;
+    }
+
+    private void removeNeighbours(){
+        foreach (Node n in connections){
+            n.neighbours.Remove(this);
+        }
+        neighbours.Clear();
+    }
+
+    private void updateNeighbour(Node n){
+        n.neighbours.Add(this);
+        neighbours.Add(n);
+    }
 
     // ========================== gizmos stuff ========================
         // gizmo colors

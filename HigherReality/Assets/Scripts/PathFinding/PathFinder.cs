@@ -100,17 +100,4 @@ public class PathFinder : MonoBehaviour
         }
         foundEnd = false;
     }
-
-    //drawing the pathStack
-    // private void OnDrawGizmos(){
-    //     if (foundEnd){
-    //         foreach (Node n in pathStack){
-    //             Gizmos.color = Color.green;
-    //             Gizmos.DrawCube(n.transform.position, new Vector3(0.25f, 0.25f, 0.25f));
-    //             Gizmos.color = Color.yellow;
-    //                 if (n.predNode != null)
-    //                     Gizmos.DrawLine(n.transform.position, n.predNode.transform.position);
-    //         }
-    //     }
-    // }
 }

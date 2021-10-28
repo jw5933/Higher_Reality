@@ -10,7 +10,7 @@ public class Clickable : MonoBehaviour, IPointerDownHandler
 {
     // Nodes under this Transform
     public Node childNode;
-    public Node[] nodes;
+    // public Node[] nodes;
 
     // invoked when collider is clicked
     public Action<Clickable,Vector3> clickAction;
@@ -26,7 +26,7 @@ public class Clickable : MonoBehaviour, IPointerDownHandler
         Debug.Log("has clicked this object " + this.name);
         if (clickAction != null){
             // invoke the clickAction with world space raycast hit position
-            clickAction.Invoke(this, eventData.pointerPressRaycast.worldPosition);
+            clickAction.Invoke(this, eventData.pointerPressRaycast.worldPosition); //return this to playermovement's onclick
         }
     }
 }
