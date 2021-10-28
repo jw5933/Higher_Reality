@@ -24,7 +24,16 @@ public class PlayerMovement : MonoBehaviour
     // flags
     [SerializeField] private bool isMoving;
     [SerializeField] private bool isControlEnabled;
+
     // private PlayerAnimation playerAnimation;
+
+    //rune and interactables
+    [SerializeField] private Rune myRune;
+    // get currnode
+    public Node node{get{return currNode;}}
+    public Rune rune{get{return myRune;} set{myRune = value;}}
+
+
 
     private void Awake()
     {
@@ -51,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (pathfinder != null)
         {
             currNode = graph.findClosestNodeAt(transform.position);
+            nextNode = currNode;
         }
 
         //listen to all clickEvents
@@ -59,11 +69,6 @@ public class PlayerMovement : MonoBehaviour
             c.clickAction += OnClick;
         }
     }
-
-    //find where the player is
-    // private Node setStartNode(){
-    //     return graph.findClosestNodeAt(transform.position);
-    // }
 
     private void OnDisable()
     {
@@ -82,13 +87,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // if we are already moving and we click again, stop all previous Animation/motion
-        if (isMoving)
-        {
+        if (isMoving){
             StopAllCoroutines();
         }
 
         // find the best path to the any Nodes under the Clickable; gives the user some flexibility
         List<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
+        // Path<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
         // FindBestPath();
         
@@ -100,19 +105,22 @@ public class PlayerMovement : MonoBehaviour
         // }
 
         // if we have a valid path, follow it
-        if (newPath.Count > 0)
-        {
+        if (newPath.Count > 0){
             StartCoroutine(followPathRoutine(newPath));
         }
-        else
-        {
+        else{
             // otherwise, invalid path, stop movement
             isMoving = false;
             // UpdateAnimation();
         }
     }
 
-
+    private IEnumerator finishPathRoutine(){
+        if (currNode == nextNode){
+            yield return null;
+        }
+        yield return StartCoroutine(finishPathRoutine());
+    }
 
     private IEnumerator followPathRoutine(List<Node> path)
     {
@@ -153,7 +161,6 @@ public class PlayerMovement : MonoBehaviour
     //  lerp to another Node from current position
     private IEnumerator moveToNodeRoutine(Vector3 startPosition, Node targetNode)
     {
-
         float elapsedTime = 0;
 
         // validate move time
@@ -168,16 +175,14 @@ public class PlayerMovement : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, targetPos, lerpValue);
 
             // if over halfway, change parent to next node
-            if (lerpValue > 0.51f)
-            {
+            if (lerpValue > 0.51f){
                 transform.parent = targetNode.transform;
                 currNode = targetNode;
 
                 // invoke UnityEvent associated with next Node
-                targetNode.gameEvent.Invoke();
+                // targetNode.gameEvent.Invoke();
                 //Debug.Log("invoked GameEvent from targetNode: " + targetNode.name);
             }
-
             // wait one frame
             yield return null;
         }
