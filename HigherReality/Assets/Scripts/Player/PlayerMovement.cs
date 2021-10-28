@@ -15,23 +15,27 @@ public class PlayerMovement : MonoBehaviour
     //private Animator cursorAnimController;
 
     // pathfinding fields
-    [SerializeField] private Clickable[] clickables;
-    [SerializeField] PathFinder pathfinder;
-    [SerializeField] Graph graph;
-    [SerializeField] private Node currNode;
-    [SerializeField] private Node nextNode;
+    private Clickable[] clickables;
+    PathFinder pathfinder;
+    Graph graph;
+    private Node currNode;
+    private Node nextNode;
 
     // flags
-    [SerializeField] private bool isMoving;
-    [SerializeField] private bool isControlEnabled;
+    private bool isMoving;
+    private bool isControlEnabled;
 
     // private PlayerAnimation playerAnimation;
 
     //rune and interactables
-    [SerializeField] private Rune myRune;
-    // get currnode
+    private Rune myRune;
+    [SerializeField] private Transform runeTransform;
+
+    // get-sets
+    public Vector3 runePos{get{return runeTransform.position;}}
     public Node node{get{return currNode;}}
     public Rune rune{get{return myRune;} set{myRune = value;}}
+    public bool checkIsMoving{get{return isMoving;}}
 
 
 
@@ -39,13 +43,14 @@ public class PlayerMovement : MonoBehaviour
     {
         //  initialize fields
         clickables = FindObjectsOfType<Clickable>();
-        // pathfinder = FindObjectOfType<PathFinder>();
+        pathfinder = FindObjectOfType<PathFinder>();
+        
         // playerAnimation = GetComponent<PlayerAnimation>();
 
-        // if (pathfinder != null)
-        // {
-        //     graph = pathfinder.GetComponent<Graph>();
-        // }
+        if (pathfinder != null)
+        {
+            graph = pathfinder.GetComponent<Graph>();
+        }
 
         isMoving = false;
         isControlEnabled = true;
@@ -80,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnClick(Clickable clickable, Vector3 position){
-        Debug.Log("Should be handling click");
+        // Debug.Log("Should be handling click");
         if (!isControlEnabled || clickable == null || pathfinder == null)
         {
             return;
@@ -93,9 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
         // find the best path to the any Nodes under the Clickable; gives the user some flexibility
         List<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
-        // Path<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
-        // FindBestPath();
         
 
         // show a marker for the mouse click
@@ -179,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.parent = targetNode.transform;
                 currNode = targetNode;
 
+
                 // invoke UnityEvent associated with next Node
                 // targetNode.gameEvent.Invoke();
                 //Debug.Log("invoked GameEvent from targetNode: " + targetNode.name);
@@ -192,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
     public void snapToNearestNode()
     {
         Node nearestNode = graph?.findClosestNodeAt(transform.position);
-        Debug.Log("Nearest node to click is " + nearestNode.name);
+        // Debug.Log("Nearest node to click is " + nearestNode.name);
         if (nearestNode != null)
         {
             currNode = nearestNode;
