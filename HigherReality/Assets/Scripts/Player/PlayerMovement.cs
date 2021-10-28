@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     //  time to move one unit
-    [Range(0.25f, 2f)]
-    [SerializeField] private float moveTime = 0.5f;
+    [Range(1f, 5f)]
+    [SerializeField] private float playerSpeed = 3f;
 
     // click indicator
     // [SerializeField] Cursor cursor;
@@ -118,15 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator finishPathRoutine(){
-        if (currNode == nextNode){
-            yield return null;
-        }
-        yield return StartCoroutine(finishPathRoutine());
-    }
-
-    private IEnumerator followPathRoutine(List<Node> path)
-    {
+    private IEnumerator followPathRoutine(List<Node> path){
         // start moving
         isMoving = true;
 
@@ -152,44 +144,29 @@ public class PlayerMovement : MonoBehaviour
                 // faceNextPosition(transform.position, aimNode.transform.position);
 
                 // move to the next Node
-                yield return StartCoroutine(moveToNodeRoutine(transform.position, nextNode));
+                // yield return StartCoroutine(moveToNodeRoutine(transform.position, nextNode));
+                yield return StartCoroutine(moveToRoutine(transform.position, nextNode));
             }
         }
-
         isMoving = false;
         // UpdateAnimation();
 
     }
 
-    //  lerp to another Node from current position
-    private IEnumerator moveToNodeRoutine(Vector3 startPosition, Node targetNode)
-    {
-        float elapsedTime = 0;
-
-        // validate move time
-        moveTime = Mathf.Clamp(moveTime, 0.1f, 5f);
-
-        while (elapsedTime < moveTime && targetNode != null && !hasReachedNode(targetNode))
-        {
-            elapsedTime += Time.deltaTime;
-            float lerpValue = Mathf.Clamp(elapsedTime / moveTime, 0f, 1f);
-
-            Vector3 targetPos = targetNode.transform.position;
-            transform.position = Vector3.Lerp(startPosition, targetPos, lerpValue);
-
-            // if over halfway, change parent to next node
-            if (lerpValue > 0.51f){
-                transform.parent = targetNode.transform;
-                currNode = targetNode;
-
-
-                // invoke UnityEvent associated with next Node
-                // targetNode.gameEvent.Invoke();
-                //Debug.Log("invoked GameEvent from targetNode: " + targetNode.name);
-            }
-            // wait one frame
-            yield return null;
+    //movement is based off of distance between a and b (removes stuttering if the player clicks the platform multiple times)
+    //also removes differing speed between blocks if the player wants to change locations in the middle of movement
+    IEnumerator moveToRoutine(Vector3 a, Node targetNode){
+        Vector3 b = targetNode.transform.position;
+        float step = (playerSpeed / (a - b).magnitude) * Time.fixedDeltaTime;
+        float t = 0;
+        while (t <= 1.0f){
+            t += step; // Goes from 0 to 1, incrementing by step each time
+            transform.position = Vector3.Lerp(a, b, t); // Move objectToMove closer to b
+            yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
         }
+        transform.parent = targetNode.transform;
+        currNode = targetNode;
+        yield return null;
     }
 
     // snap the Player to the nearest Node in Game view
