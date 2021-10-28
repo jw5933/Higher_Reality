@@ -1824,11 +1824,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam3d: {fileID: 1093512758}
-  cam1: {fileID: 1592540430}
-  cam2: {fileID: 35816734}
-  cam3: {fileID: 1506161922}
-  cam4: {fileID: 2099231271}
-  cam5: {fileID: 1276451035}
+  cams2d:
+  - {fileID: 1592540430}
+  - {fileID: 35816734}
+  - {fileID: 1506161922}
+  - {fileID: 2099231271}
+  - {fileID: 1276451035}
 --- !u!1 &771097900
 GameObject:
   m_ObjectHideFlags: 0
