@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     Node currNode;
     Rune currRune;
     Node interactable;
-
+    [SerializeField] private CamSwap camSystem;
+    public Rune rune{get{return currRune;}}
 
     // Start is called before the first frame update
     void Awake()
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
                 currNode.rune = null; //remove the rune from the node
                 currRune.currObj = player.gameObject;
 
-                currRune.moveTo(player.runePos);
+                currRune.moveTo(player.runePos, true, camSystem.isOn2d);
             }
             
         }
@@ -66,6 +67,6 @@ public class GameManager : MonoBehaviour
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
-        currRune.moveTo(currNode.transform.position);
+        currRune.moveTo(currNode.transform.position, false, camSystem.isOn2d);
     }
 }
