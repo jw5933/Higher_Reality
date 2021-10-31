@@ -407,6 +407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fc3438cdff846c3924900c7fa84258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &321029559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
+  m_PrefabInstance: {fileID: 5213006171857537078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321045491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1035,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!4 &768616808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5157204726166250571, guid: 803b4fc69018f864b82ee74df3663088, type: 3}
+  m_PrefabInstance: {fileID: 8070961655271975097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815852061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5673b78bab48741529fdf62478e09916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camSystem: {fileID: 975769328}
 --- !u!4 &815852063
 Transform:
   m_ObjectHideFlags: 0
@@ -1103,6 +1114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeOrPlayer: {fileID: 1637005859}
+  myRune3d: {fileID: 321029559}
+  myRune2d: {fileID: 321029559}
+  myRuneObj: {fileID: 321029559}
 --- !u!4 &832863927
 Transform:
   m_ObjectHideFlags: 0
@@ -1598,6 +1612,8 @@ MonoBehaviour:
   - {fileID: 833796267}
   - {fileID: 761365692}
   - {fileID: 845786184}
+  gameManager: {fileID: 815852062}
+  runes: []
 --- !u!4 &975769329
 Transform:
   m_ObjectHideFlags: 0
@@ -1628,6 +1644,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fc3438cdff846c3924900c7fa84258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1300363636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300363638}
+  - component: {fileID: 1300363637}
+  m_Layer: 0
+  m_Name: Node (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1300363637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300363636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc3438cdff846c3924900c7fa84258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformSpeed: 5
+  positions:
+  - {x: -2.003, y: 0.399, z: 2.006}
+  - {x: -2.003, y: 2.54, z: 2.006}
+  connections:
+  - {fileID: 228009287}
+  - {fileID: 1811511722}
+  neighbours: []
+  excludedNodes: []
+  gizmoRadius: 0.1
+  defaultGizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  selectedGizmoColor: {r: 0, g: 0, b: 1, a: 1}
+  inactiveGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!4 &1300363638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300363636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06000018, y: 0.5019256, z: -0.02}
+  m_LocalScale: {x: 1, y: 0.24936514, z: 1}
+  m_Children: []
+  m_Father: {fileID: 768616808}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1323620389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1841,6 +1913,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1].z
       value: 2.006
       objectReference: {fileID: 0}
+    - target: {fileID: 4197203930170224718, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_TagString
+      value: UpDown
+      objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_Name
       value: PlatformThin (3)
@@ -1939,7 +2015,7 @@ MonoBehaviour:
   - {x: -2.003, y: 2.54, z: 2.006}
   connections:
   - {fileID: 228009287}
-  - {fileID: 0}
+  - {fileID: 1300363637}
   neighbours: []
   excludedNodes: []
   gizmoRadius: 0.1
@@ -2681,6 +2757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 832863927}
     m_Modifications:
+    - target: {fileID: 5213006171857098641, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 829ce76aaf26e4e9a98ad764fd79636c, type: 2}
     - target: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
       propertyPath: m_Name
       value: RuneMesh
@@ -2754,7 +2834,7 @@ PrefabInstance:
     - target: {fileID: 6735472334050817772, guid: 632a1d320d335e64d90d857bf84ed977, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bf59357f861a5cb43b31ac471652b4c3, type: 2}
+      objectReference: {fileID: 2100000, guid: b05993c7a2b1c684baf0cf0ceecc10a9, type: 2}
     - target: {fileID: 6735472334050817774, guid: 632a1d320d335e64d90d857bf84ed977, type: 3}
       propertyPath: m_RootOrder
       value: 9
