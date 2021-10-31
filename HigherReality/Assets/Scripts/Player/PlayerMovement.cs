@@ -44,13 +44,14 @@ public class PlayerMovement : MonoBehaviour
         //  initialize fields
         clickables = FindObjectsOfType<Clickable>();
         pathfinder = FindObjectOfType<PathFinder>();
+        graph = FindObjectOfType<Graph>();
         
         // playerAnimation = GetComponent<PlayerAnimation>();
 
-        if (pathfinder != null)
-        {
-            graph = pathfinder.GetComponent<Graph>();
-        }
+        // if (pathfinder != null)
+        // {
+        //     graph = pathfinder.GetComponent<Graph>();
+        // }
 
         isMoving = false;
         isControlEnabled = true;
