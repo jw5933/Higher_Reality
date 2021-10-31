@@ -6,30 +6,35 @@ using UnityEngine.Events;
 public class Node : MonoBehaviour
 {
     //rune architecture
-    [SerializeField] private Rune myRune;
+    private Rune myRune;
     public Rune rune{get{return myRune;} set{myRune = value;}}
 
     //interaction
-    [SerializeField] private bool isMoving;
-    [SerializeField] private float blockSpeed;
-    [SerializeField] private Node interactable;
+    private bool isMoving;
+    //the speed of this block's movement
+    [SerializeField] private float platformSpeed;
+    private Node interactableObj;
+    //team needs to be able to add an interactable object's connecting blocks and locations
     [SerializeField] private List<Vector3> positions = new List<Vector3>();
     [SerializeField] private List<Node> connections = new List<Node>();
-    [SerializeField] private int currConnection = 0;
+    private int currConnection = 0;
 
     public GameObject getObject{get{return this.gameObject;}}
-    public Node getInteractable{get{return interactable;}}
+    public Node interactable{get{return interactableObj;} set {interactableObj = value;}}
 
 
 
     //pathfinder
     private List<Edge> edges = new List<Edge>(); //only for gizmos
+    // private List<Node> neighbours = new List<Node>();
     public List<Node> neighbours = new List<Node>();
+    public List<Node> getNeighbours {get{return neighbours;}} //performance is a bit low..?
     [SerializeField] private List<Node> excludedNodes = new List<Node>();
 
-    public Graph graph;
+    private Graph myGraph;
+    public Graph graph{set{myGraph = value;}}
 
-    [SerializeField]private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
+    private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
     private Node pi; //used to find the path -> predecessor node
 
     // invoked when Player enters this node
@@ -42,25 +47,21 @@ public class Node : MonoBehaviour
     public static Vector3[] neighbourDir = //{east, west, north, south}
     {new Vector3(1f, 0f, 0f), new Vector3(-1f, 0f, 0f), new Vector3(0f, 0f, 1f), new Vector3(0f, 0f, -1f)};
 
-    public void findNeighbours(){
-        foreach(Vector3 v in neighbourDir){
-            Node n = graph.findNodeAt(transform.position + v);
-            // Debug.Log(n.name);
-            // if (!neighbours.Contains(n)) Debug.Log("does not contain this node");
-            if (n != null && !neighbours.Contains(n) && !excludedNodes.Contains(n)){
-                Edge newEdge = new Edge(n, true);
-                edges.Add(newEdge);
-                neighbours.Add(n);
-            }
+
+    //automatically connect interactables
+    private void Awake(){
+        foreach (Node n in connections){
+            if (n!= null) n.interactableObj = this;
         }
+        neighbours.RemoveAll(node => node == null);
     }
 
     public void moveToNext(){
         if(!isMoving){
             Vector3 a = this.transform.parent.transform.position;
             currConnection = currConnection++ >= positions.Count-1 ? 0 : currConnection++;
-            Debug.Log(currConnection);
-            StartCoroutine(moveFromTo(a, positions[currConnection], blockSpeed));
+            // Debug.Log(currConnection);
+            StartCoroutine(moveFromTo(a, positions[currConnection], platformSpeed));
         }
     }
 
@@ -81,14 +82,61 @@ public class Node : MonoBehaviour
 
     private void removeNeighbours(){
         foreach (Node n in connections){
-            n.neighbours.Remove(this);
+            if (n != null) n.neighbours.Remove(this);
         }
         neighbours.Clear();
     }
 
     private void updateNeighbour(Node n){
+        if (n == null) return;
         n.neighbours.Add(this);
         neighbours.Add(n);
+    }
+
+
+
+    //==========================================            free use code           ==========================================
+    /*
+    * Copyright (c) 2020 Razeware LLC
+    * 
+    * Permission is hereby granted, free of charge, to any person obtaining a copy
+    * of this software and associated documentation files (the "Software"), to deal
+    * in the Software without restriction, including without limitation the rights
+    * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    * copies of the Software, and to permit persons to whom the Software is
+    * furnished to do so, subject to the following conditions:
+    * 
+    * The above copyright notice and this permission notice shall be included in
+    * all copies or substantial portions of the Software.
+    *
+    * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
+    * distribute, sublicense, create a derivative work, and/or sell copies of the 
+    * Software in any work that is designed, intended, or marketed for pedagogical or 
+    * instructional purposes related to programming, coding, application development, 
+    * or information technology.  Permission for such use, copying, modification,
+    * merger, publication, distribution, sublicensing, creation of derivative works, 
+    * or sale is expressly withheld.
+    *    
+    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    * THE SOFTWARE.
+    */
+
+    public void findNeighbours(){
+        foreach(Vector3 v in neighbourDir){
+            Node n = myGraph.findNodeAt(transform.position + v);
+            // Debug.Log(n.name);
+            // if (!neighbours.Contains(n)) Debug.Log("does not contain this node");
+            if (n != null && !neighbours.Contains(n) && !excludedNodes.Contains(n)){
+                Edge newEdge = new Edge(n, true);
+                edges.Add(newEdge);
+                neighbours.Add(n);
+            }
+        }
     }
 
     // ========================== gizmos stuff ========================
@@ -119,34 +167,3 @@ public class Node : MonoBehaviour
         }
     }
 }
-
-
-/*
- * Copyright (c) 2020 Razeware LLC
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
- * distribute, sublicense, create a derivative work, and/or sell copies of the 
- * Software in any work that is designed, intended, or marketed for pedagogical or 
- * instructional purposes related to programming, coding, application development, 
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works, 
- * or sale is expressly withheld.
- *    
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */

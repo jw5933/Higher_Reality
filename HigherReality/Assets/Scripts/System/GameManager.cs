@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] PlayerMovement player;
-    [SerializeField] Node currNode;
-    [SerializeField] Rune currRune;
-    [SerializeField] Node interactable;
-
+    PlayerMovement player;
+    Node currNode;
+    Rune currRune;
+    Node interactable;
+    [SerializeField] private CamSwap camSystem;
+    public Rune rune{get{return currRune;}}
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (player == null) player = FindObjectOfType<PlayerMovement>();
     }
@@ -25,6 +26,15 @@ public class GameManager : MonoBehaviour
 
             checkRuneExists();
         }
+        if (Input.GetKeyDown(KeyCode.D)){
+            Debug.Log("checking d");
+            if (!player.checkIsMoving){
+                Debug.Log("checked d and player is not moving");
+                currNode = player.node;
+                currRune = player.rune;
+                checkDrop();
+            }
+        }
     }
 
     void checkRuneExists(){
@@ -34,18 +44,29 @@ public class GameManager : MonoBehaviour
                 player.rune = currNode.rune;
                 currRune = player.rune;
                 currNode.rune = null; //remove the rune from the node
-                currRune.debugObj = player.gameObject;
+                currRune.currObj = player.gameObject;
+
+                currRune.moveTo(player.runePos, true, camSystem.isOn2d);
             }
             
         }
         else{
-            if(currNode.tag == currRune.getObject.tag){
-                if (currNode.getInteractable != null){
-                    interactable = currNode.getInteractable;
+            if(currNode.tag == currRune.tag){
+                if (currNode.interactable != null){
+                    interactable = currNode.interactable;
                     interactable.moveToNext();
                 }
                 else currNode.moveToNext();
             }
         }
+    }
+
+    void checkDrop(){
+        if (currNode == null || currRune == null) return;
+        //place the rune on the current node
+        currNode.rune = currRune;
+        player.rune = null;
+        currRune.currObj = currNode.gameObject;
+        currRune.moveTo(currNode.transform.position, false, camSystem.isOn2d);
     }
 }
