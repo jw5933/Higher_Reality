@@ -53,6 +53,7 @@ public class Node : MonoBehaviour
         foreach (Node n in connections){
             if (n!= null) n.interactableObj = this;
         }
+        neighbours.RemoveAll(node => node == null);
     }
 
     public void moveToNext(){
