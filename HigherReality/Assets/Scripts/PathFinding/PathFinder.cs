@@ -21,6 +21,10 @@ public class PathFinder : MonoBehaviour
     public Node startNode{set {sNode = value;}}
     public Node endNode{get{return eNode;} set {eNode = value;}}
 
+    private void Awake(){
+        graph = FindObjectOfType<Graph>();
+    }
+
     public List<Node> findPath(Node currNode, Node destNode){
         // Debug.Log("Curr node: " + currNode.name + " End node: " + destNode.name);
         sNode = currNode;
