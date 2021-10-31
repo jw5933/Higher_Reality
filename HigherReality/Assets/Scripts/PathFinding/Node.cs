@@ -40,6 +40,9 @@ public class Node : MonoBehaviour
     // invoked when Player enters this node
     // public UnityEvent gameEvent;
 
+    //audio
+    [SerializeField] private int blockLength; //0- short; 1 - medium; 2 - long
+
     //let other classes get set the pNode
     public Node predNode { get { return pi; } set { pi = value; } }
     public int colour {get{return c;} set{c = value;}}
@@ -91,6 +94,11 @@ public class Node : MonoBehaviour
         if (n == null) return;
         n.neighbours.Add(this);
         neighbours.Add(n);
+    }
+
+    public void playSound(AudioManager am){
+        if(blockLength < 3 && blockLength>=0)
+            am.playBlockSound(blockLength);
     }
 
 

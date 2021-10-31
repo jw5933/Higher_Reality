@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Audio
+    [SerializeField] AudioManager audioManager;
+    //variables
     PlayerMovement player;
     Node currNode;
     Rune currRune;
@@ -14,6 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         if (player == null) player = FindObjectOfType<PlayerMovement>();
     }
 
@@ -50,13 +54,19 @@ public class GameManager : MonoBehaviour
             }
             
         }
-        else{
-            if(currNode.tag == currRune.tag){
-                if (currNode.interactable != null){
-                    interactable = currNode.interactable;
-                    interactable.moveToNext();
-                }
-                else currNode.moveToNext();
+        else interactWithRune();
+    }
+
+    void interactWithRune(){
+        if(currNode.tag == currRune.tag){
+            if (currNode.interactable != null){
+                interactable = currNode.interactable;
+                interactable.moveToNext();
+                interactable.playSound(audioManager);
+            }
+            else {
+                currNode.moveToNext();
+                currNode.playSound(audioManager);
             }
         }
     }
