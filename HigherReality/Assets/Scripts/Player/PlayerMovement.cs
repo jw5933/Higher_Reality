@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     //  time to move one unit
-    [Range(0.25f, 2f)]
-    [SerializeField] private float moveTime = 0.5f;
+    [Range(1f, 5f)]
+    [SerializeField] private float playerSpeed = 3f;
 
     // click indicator
     // [SerializeField] Cursor cursor;
@@ -15,22 +15,37 @@ public class PlayerMovement : MonoBehaviour
     //private Animator cursorAnimController;
 
     // pathfinding fields
-    [SerializeField] private Clickable[] clickables;
-    [SerializeField] PathFinder pathfinder;
-    [SerializeField] Graph graph;
-    [SerializeField] private Node currNode;
-    [SerializeField] private Node nextNode;
+    private Clickable[] clickables;
+    PathFinder pathfinder;
+    Graph graph;
+    private Node currNode;
+    private Node nextNode;
 
     // flags
-    [SerializeField] private bool isMoving;
-    [SerializeField] private bool isControlEnabled;
+    private bool isMoving;
+    private bool isControlEnabled;
+
     // private PlayerAnimation playerAnimation;
+
+    //rune and interactables
+    private Rune myRune;
+    [SerializeField] private Transform runeTransform;
+
+    // get-sets
+    public Vector3 runePos{get{return runeTransform.position;}}
+    public Node node{get{return currNode;}}
+    public Rune rune{get{return myRune;} set{myRune = value;}}
+    public bool checkIsMoving{get{return isMoving;}}
+
+
 
     private void Awake()
     {
         //  initialize fields
         clickables = FindObjectsOfType<Clickable>();
-        // pathfinder = FindObjectOfType<PathFinder>();
+        pathfinder = FindObjectOfType<PathFinder>();
+        graph = FindObjectOfType<Graph>();
+        
         // playerAnimation = GetComponent<PlayerAnimation>();
 
         // if (pathfinder != null)
@@ -51,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if (pathfinder != null)
         {
             currNode = graph.findClosestNodeAt(transform.position);
+            nextNode = currNode;
         }
 
         //listen to all clickEvents
@@ -59,11 +75,6 @@ public class PlayerMovement : MonoBehaviour
             c.clickAction += OnClick;
         }
     }
-
-    //find where the player is
-    // private Node setStartNode(){
-    //     return graph.findClosestNodeAt(transform.position);
-    // }
 
     private void OnDisable()
     {
@@ -75,22 +86,20 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnClick(Clickable clickable, Vector3 position){
-        Debug.Log("Should be handling click");
+        // Debug.Log("Should be handling click");
         if (!isControlEnabled || clickable == null || pathfinder == null)
         {
             return;
         }
 
         // if we are already moving and we click again, stop all previous Animation/motion
-        if (isMoving)
-        {
+        if (isMoving){
             StopAllCoroutines();
         }
 
         // find the best path to the any Nodes under the Clickable; gives the user some flexibility
         List<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
-        // FindBestPath();
         
 
         // show a marker for the mouse click
@@ -100,22 +109,17 @@ public class PlayerMovement : MonoBehaviour
         // }
 
         // if we have a valid path, follow it
-        if (newPath.Count > 0)
-        {
+        if (newPath.Count > 0){
             StartCoroutine(followPathRoutine(newPath));
         }
-        else
-        {
+        else{
             // otherwise, invalid path, stop movement
             isMoving = false;
             // UpdateAnimation();
         }
     }
 
-
-
-    private IEnumerator followPathRoutine(List<Node> path)
-    {
+    private IEnumerator followPathRoutine(List<Node> path){
         // start moving
         isMoving = true;
 
@@ -141,53 +145,36 @@ public class PlayerMovement : MonoBehaviour
                 // faceNextPosition(transform.position, aimNode.transform.position);
 
                 // move to the next Node
-                yield return StartCoroutine(moveToNodeRoutine(transform.position, nextNode));
+                // yield return StartCoroutine(moveToNodeRoutine(transform.position, nextNode));
+                yield return StartCoroutine(moveToRoutine(transform.position, nextNode));
             }
         }
-
         isMoving = false;
         // UpdateAnimation();
 
     }
 
-    //  lerp to another Node from current position
-    private IEnumerator moveToNodeRoutine(Vector3 startPosition, Node targetNode)
-    {
-
-        float elapsedTime = 0;
-
-        // validate move time
-        moveTime = Mathf.Clamp(moveTime, 0.1f, 5f);
-
-        while (elapsedTime < moveTime && targetNode != null && !hasReachedNode(targetNode))
-        {
-            elapsedTime += Time.deltaTime;
-            float lerpValue = Mathf.Clamp(elapsedTime / moveTime, 0f, 1f);
-
-            Vector3 targetPos = targetNode.transform.position;
-            transform.position = Vector3.Lerp(startPosition, targetPos, lerpValue);
-
-            // if over halfway, change parent to next node
-            if (lerpValue > 0.51f)
-            {
-                transform.parent = targetNode.transform;
-                currNode = targetNode;
-
-                // invoke UnityEvent associated with next Node
-                targetNode.gameEvent.Invoke();
-                //Debug.Log("invoked GameEvent from targetNode: " + targetNode.name);
-            }
-
-            // wait one frame
-            yield return null;
+    //movement is based off of distance between a and b (removes stuttering if the player clicks the platform multiple times)
+    //also removes differing speed between blocks if the player wants to change locations in the middle of movement
+    IEnumerator moveToRoutine(Vector3 a, Node targetNode){
+        Vector3 b = targetNode.transform.position;
+        float step = (playerSpeed / (a - b).magnitude) * Time.fixedDeltaTime;
+        float t = 0;
+        while (t <= 1.0f){
+            t += step; // Goes from 0 to 1, incrementing by step each time
+            transform.position = Vector3.Lerp(a, b, t); // Move objectToMove closer to b
+            yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
         }
+        transform.parent = targetNode.transform;
+        currNode = targetNode;
+        yield return null;
     }
 
     // snap the Player to the nearest Node in Game view
     public void snapToNearestNode()
     {
         Node nearestNode = graph?.findClosestNodeAt(transform.position);
-        Debug.Log("Nearest node to click is " + nearestNode.name);
+        // Debug.Log("Nearest node to click is " + nearestNode.name);
         if (nearestNode != null)
         {
             currNode = nearestNode;
