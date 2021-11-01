@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //Audio
-    [SerializeField] AudioManager audioManager;
-    //variables
+    AudioManager audioManager;
     PlayerMovement player;
     Node currNode;
     Rune currRune;
@@ -50,6 +48,7 @@ public class GameManager : MonoBehaviour
                 currNode.rune = null; //remove the rune from the node
                 currRune.currObj = player.gameObject;
 
+                audioManager.playRuneSound(0);
                 currRune.moveTo(player.runePos, true, camSystem.isOn2d);
             }
             
@@ -77,6 +76,8 @@ public class GameManager : MonoBehaviour
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
+
+        audioManager.playRuneSound(1);
         currRune.moveTo(currNode.transform.position, false, camSystem.isOn2d);
     }
 }
