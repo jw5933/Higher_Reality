@@ -9,14 +9,15 @@ public class GameManager : MonoBehaviour
     Node currNode;
     Rune currRune;
     Node interactable;
-    [SerializeField] private CamSwap camSystem;
+    CamSwap camSystem;
     public Rune rune{get{return currRune;}}
 
     // Start is called before the first frame update
     void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        if (player == null) player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
+        camSystem = FindObjectOfType<CamSwap>();
     }
 
     // Update is called once per frame
