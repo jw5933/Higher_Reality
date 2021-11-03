@@ -84,7 +84,7 @@ public class Node : MonoBehaviour
         isMoving = true;
         float step = (speed / (a - b).magnitude) * Time.fixedDeltaTime;
         float t = 0;
-        while (t <= 1.0f){
+        while (t < 1.0f){
             t += step; // Goes from 0 to 1, incrementing by step each time
             this.transform.parent.transform.position = Vector3.Lerp(a, b, t); // Move objectToMove closer to b
             yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
@@ -103,7 +103,7 @@ public class Node : MonoBehaviour
 
     private void findAdjNeighbours(){ //adjusted from free code below
         foreach(Vector3 v in myGraph.neighbourDir){
-            Node n = myGraph.findNodeAt(transform.position + v);
+            Node n = myGraph.findObjectNodeAt(transform.parent.transform.position + v);
             if (n != null && !neighbours.Contains(n) && !excludedNodes.Contains(n)){
                 neighbours.Add(n);
                 n.neighbours.Add(this);
@@ -164,10 +164,10 @@ public class Node : MonoBehaviour
 
     // ========================== gizmos stuff ========================
         // gizmo colors
-    [SerializeField] private float gizmoRadius = 0.1f;
-    [SerializeField] private Color defaultGizmoColor = Color.black;
-    [SerializeField] private Color selectedGizmoColor = Color.blue;
-    [SerializeField] private Color inactiveGizmoColor = Color.gray;
+     private float gizmoRadius = 0.1f;
+     private Color defaultGizmoColor = Color.black;
+     private Color selectedGizmoColor = Color.blue;
+     private Color inactiveGizmoColor = Color.gray;
     //drawing for visuals
     private void OnDrawGizmos(){
         Gizmos.color = defaultGizmoColor;
