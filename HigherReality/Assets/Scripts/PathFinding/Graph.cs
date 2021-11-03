@@ -5,12 +5,16 @@ using System.Linq;
 
 public class Graph : MonoBehaviour
 {
-    [SerializeField] private List<Node> allNodes = new List<Node>();
+    private List<Node> allNodes = new List<Node>();
     Node[] arr;
 
     //let level designer set the distance check for neighbouring nodes
     private static Vector3[] neighbourDirection; //{east, west, north, south}
     public Vector3[] neighbourDir{get{return neighbourDirection;}}
+
+    [Range(0.01f,1f)]
+    [SerializeField] private float maxMagnitude = 0.1f;
+
     [Range(0f,5f)]
     [SerializeField] private float maxNodeDistance = 1f;
     public float nodeDistance{get{return maxNodeDistance;}}
@@ -88,7 +92,7 @@ public class Graph : MonoBehaviour
     {
         foreach (Node n in allNodes){
             Vector3 diff = n.transform.parent.transform.position - pos;
-            if (diff.sqrMagnitude < 0.01f){
+            if (diff.sqrMagnitude < maxMagnitude){
                 return n;
             }
         }
