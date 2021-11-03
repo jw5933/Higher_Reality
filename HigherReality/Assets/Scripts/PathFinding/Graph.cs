@@ -5,13 +5,30 @@ using System.Linq;
 
 public class Graph : MonoBehaviour
 {
-    [SerializeField] private List<Node> allNodes = new List<Node>();
+    private List<Node> allNodes = new List<Node>();
     Node[] arr;
 
+    //let level designer set the distance check for neighbouring nodes
+    private static Vector3[] neighbourDirection; //{east, west, north, south}
+    public Vector3[] neighbourDir{get{return neighbourDirection;}}
+
+    [Range(0.01f,1f)]
+    [SerializeField] private float maxMagnitude = 0.1f;
+
+    [Range(0f,5f)]
+    [SerializeField] private float maxNodeDistance = 1f;
+    public float nodeDistance{get{return maxNodeDistance;}}
+    
     void Awake(){
         allNodes = FindObjectsOfType<Node>().ToList();
         initNodes();
         arr = allNodes.ToArray();
+
+        neighbourDirection = new Vector3[]//{east, west, north, south}
+        {new Vector3(maxNodeDistance, 0f, 0f), 
+        new Vector3(-maxNodeDistance, 0f, 0f), 
+        new Vector3(0f, 0f, maxNodeDistance), 
+        new Vector3(0f, 0f, -maxNodeDistance)};
     }
     // Start is called before the first frame update
     void Start()
@@ -19,13 +36,6 @@ public class Graph : MonoBehaviour
         arr = allNodes.ToArray();
         initNeighbours();
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
-
 
     void initNodes(){
         foreach(Node n in allNodes){
@@ -58,8 +68,7 @@ public class Graph : MonoBehaviour
     }
     
     public Node findClosestNodeAt(Vector3 pos){
-        // Node[] arr = allNodes.ToArray();
-        Debug.Log(pos.x + " " + pos.y + " " + pos.z);
+        // Debug.Log(pos.x + " " + pos.y + " " + pos.z);
         Node closestNode = allNodes[0];
         float closestDistanceSqr = Mathf.Infinity;
 
@@ -77,6 +86,17 @@ public class Graph : MonoBehaviour
             }
         }
         return closestNode;
+    }
+
+    public Node findObjectNodeAt(Vector3 pos)
+    {
+        foreach (Node n in allNodes){
+            Vector3 diff = n.transform.parent.transform.position - pos;
+            if (diff.sqrMagnitude < maxMagnitude){
+                return n;
+            }
+        }
+        return null;
     }
 }
 
