@@ -12,7 +12,7 @@ public class Node : MonoBehaviour
     private bool isMoving;
     //the speed of this block's movement
     [Range(0.1f, 10f)]
-    [SerializeField] private float platformSpeed;
+    [SerializeField] private float platformSpeed = 1;
     //team needs to be able to add an interactable object's end locations
     [SerializeField] private List<Vector3> positions = new List<Vector3>();
     private List<Node> connections = new List<Node>();
