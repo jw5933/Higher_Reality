@@ -13,7 +13,6 @@ public class Node : MonoBehaviour
     //the speed of this block's movement
     [Range(0.1f, 10f)]
     [SerializeField] private float platformSpeed;
-    private Node interactableObj;
     //team needs to be able to add an interactable object's end locations
     [SerializeField] private List<Vector3> positions = new List<Vector3>();
     private List<Node> connections = new List<Node>();
@@ -36,7 +35,6 @@ public class Node : MonoBehaviour
     //getters + setters
     public Rune rune{get{return myRune;} set{myRune = value;}}
     public GameObject getObject{get{return this.gameObject;}}
-    public Node interactable{get{return interactableObj;} set {interactableObj = value;}}
     public Graph graph{set{myGraph = value;}}
         //pathfinder
     public Node predNode { get { return pi; } set { pi = value; } }
@@ -54,7 +52,9 @@ public class Node : MonoBehaviour
         if (positions.Count != 0){
             findConnections();
             foreach (Node n in connections){
-                if (n!= null) n.interactableObj = this;
+                if (n!= null) {
+                    n.tag = this.tag;
+                }
             }
         }
     }

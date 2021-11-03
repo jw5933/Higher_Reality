@@ -8,6 +8,7 @@ public class Rune : MonoBehaviour
     [SerializeField] private GameObject myRune3d;
     [SerializeField] private GameObject myRune2d;
     [SerializeField] private GameObject myRuneObj;
+    public List<Node> interactableGroup = new List<Node>();
 
     public GameObject currObj{get{return nodeOrPlayer;} set{nodeOrPlayer = value;}}
 

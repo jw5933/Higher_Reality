@@ -2515,6 +2515,9 @@ MonoBehaviour:
   myRune3d: {fileID: 969918331}
   myRune2d: {fileID: 2082234256}
   myRuneObj: {fileID: 2082234256}
+  interactableGroup:
+  - {fileID: 66351682}
+  - {fileID: 499718878}
 --- !u!4 &1067058567
 Transform:
   m_ObjectHideFlags: 0
@@ -4172,6 +4175,7 @@ MonoBehaviour:
   myRune3d: {fileID: 0}
   myRune2d: {fileID: 0}
   myRuneObj: {fileID: 0}
+  interactableGroup: []
 --- !u!4 &1672357772
 Transform:
   m_ObjectHideFlags: 0
@@ -4507,7 +4511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3885e16f8638546718f32129d14050d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foundEnd: 0
 --- !u!114 &1992522840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4565,7 +4568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5673b78bab48741529fdf62478e09916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camSystem: {fileID: 741807204}
 --- !u!4 &2066321276
 Transform:
   m_ObjectHideFlags: 0
