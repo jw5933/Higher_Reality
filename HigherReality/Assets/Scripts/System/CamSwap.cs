@@ -16,7 +16,7 @@ public class CamSwap : MonoBehaviour
 
     void Update()
     {
-        if(onCams2d && Input.GetKeyDown(KeyCode.UpArrow)){
+        if(onCams2d && Input.GetKeyDown(KeyCode.W)){
             onCams2d = false;
 
             //change how runes look for visibility
@@ -31,7 +31,7 @@ public class CamSwap : MonoBehaviour
             }
             
         }
-        else if (!onCams2d && Input.GetKeyDown(KeyCode.DownArrow)){
+        else if (!onCams2d && Input.GetKeyDown(KeyCode.S)){
             onCams2d = true;
 
             //change how runes look for visibility
@@ -42,12 +42,12 @@ public class CamSwap : MonoBehaviour
             cam3d.SetActive(false);
             cams2d[currCam].SetActive(true);
         }
-        else if (onCams2d && Input.GetKeyDown(KeyCode.LeftArrow)){
+        else if (onCams2d && Input.GetKeyDown(KeyCode.A)){
             if (currCam == 0) currCam = cams2d.Count-1;
             else currCam--;
             swapCam();
         }
-        else if (onCams2d && Input.GetKeyDown(KeyCode.RightArrow)){
+        else if (onCams2d && Input.GetKeyDown(KeyCode.D)){
             if (currCam == cams2d.Count-1) currCam = 0;
             else currCam++;
             swapCam();

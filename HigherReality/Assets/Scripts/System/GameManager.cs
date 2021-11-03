@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
             checkRuneExists();
         }
-        if (Input.GetKeyDown(KeyCode.D)){
+        if (Input.GetKeyDown(KeyCode.Q)){
             Debug.Log("checking d");
             if (!player.checkIsMoving){
                 Debug.Log("checked d and player is not moving");

@@ -19,7 +19,7 @@ public class Clickable : MonoBehaviour, IPointerDownHandler
     private void Awake()
     {
         node = GetComponentInChildren<Node>();
-        if (node.tag == "Untagged") node.tag = this.tag;
+        // if (this.tag != "Untagged" && node.tag == "Untagged") node.tag = this.tag;
         // nodes = GetComponentsInChildren<Node>();
     }
 
