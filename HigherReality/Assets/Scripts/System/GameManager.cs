@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     PlayerMovement player;
     Node currNode;
     Rune currRune;
-    Node interactable;
     CamSwap camSystem;
     public Rune rune{get{return currRune;}}
 
@@ -59,14 +58,8 @@ public class GameManager : MonoBehaviour
 
     void interactWithRune(){
         if(currNode.tag == currRune.tag){
-            if (currNode.interactable != null){
-                interactable = currNode.interactable;
-                interactable.moveToNext();
-                interactable.playSound(audioManager);
-            }
-            else {
-                currNode.moveToNext();
-                currNode.playSound(audioManager);
+            foreach (Node n in currRune.interactableGroup){
+                n.moveToNext();
             }
         }
     }
@@ -74,6 +67,7 @@ public class GameManager : MonoBehaviour
     void checkDrop(){
         if (currNode == null || currRune == null) return;
         //place the rune on the current node
+        if (currNode.rune !=null) return; //cannot drop the rune if there is already one there
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
