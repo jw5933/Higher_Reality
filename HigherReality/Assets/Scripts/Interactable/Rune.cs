@@ -12,6 +12,14 @@ public class Rune : MonoBehaviour
 
     public GameObject currObj{get{return nodeOrPlayer;} set{nodeOrPlayer = value;}}
 
+    private void Start(){
+        //snap the rune to its location
+        Graph g = FindObjectOfType<Graph>();
+        nodeOrPlayer = g.findClosestNodeAt(transform.position).gameObject;
+        moveTo(nodeOrPlayer.transform.position, false, false);
+        ((Node)nodeOrPlayer.GetComponent(typeof(Node))).rune = this;
+    }
+
     public void moveTo(Vector3 dest, bool moveToPlayer, bool on2d){
         this.transform.position = dest;
         this.transform.parent = nodeOrPlayer.transform;
@@ -30,13 +38,5 @@ public class Rune : MonoBehaviour
         myRune2d.SetActive(false);
         myRuneObj.SetActive(false);
         rune.SetActive(true);
-    }
-
-    private void Start(){
-        //snap the rune to its location
-        Graph g = FindObjectOfType<Graph>();
-        nodeOrPlayer = g.findClosestNodeAt(transform.position).gameObject;
-        moveTo(nodeOrPlayer.transform.position, false, false);
-        ((Node)nodeOrPlayer.GetComponent(typeof(Node))).rune = this;
     }
 }
