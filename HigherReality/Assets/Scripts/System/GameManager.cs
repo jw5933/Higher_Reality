@@ -8,15 +8,15 @@ public class GameManager : MonoBehaviour
     PlayerMovement player;
     Node currNode;
     Rune currRune;
-    Node interactable;
-    [SerializeField] private CamSwap camSystem;
+    CamSwap camSystem;
     public Rune rune{get{return currRune;}}
 
     // Start is called before the first frame update
     void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        if (player == null) player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
+        camSystem = FindObjectOfType<CamSwap>();
     }
 
     // Update is called once per frame
@@ -58,14 +58,8 @@ public class GameManager : MonoBehaviour
 
     void interactWithRune(){
         if(currNode.tag == currRune.tag){
-            if (currNode.interactable != null){
-                interactable = currNode.interactable;
-                interactable.moveToNext();
-                interactable.playSound(audioManager);
-            }
-            else {
-                currNode.moveToNext();
-                currNode.playSound(audioManager);
+            foreach (Node n in currRune.interactableGroup){
+                n.moveToNext();
             }
         }
     }
@@ -73,6 +67,7 @@ public class GameManager : MonoBehaviour
     void checkDrop(){
         if (currNode == null || currRune == null) return;
         //place the rune on the current node
+        if (currNode.rune !=null) return; //cannot drop the rune if there is already one there
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;

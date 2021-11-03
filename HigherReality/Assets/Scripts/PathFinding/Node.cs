@@ -7,69 +7,80 @@ public class Node : MonoBehaviour
 {
     //rune architecture
     private Rune myRune;
-    public Rune rune{get{return myRune;} set{myRune = value;}}
 
     //interaction
     private bool isMoving;
     //the speed of this block's movement
+    [Range(0.1f, 10f)]
     [SerializeField] private float platformSpeed;
-    private Node interactableObj;
-    //team needs to be able to add an interactable object's connecting blocks and locations
+    //team needs to be able to add an interactable object's end locations
     [SerializeField] private List<Vector3> positions = new List<Vector3>();
-    [SerializeField] private List<Node> connections = new List<Node>();
-    private int currConnection = 0;
-
-    public GameObject getObject{get{return this.gameObject;}}
-    public Node interactable{get{return interactableObj;} set {interactableObj = value;}}
-
-
+    private List<Node> connections = new List<Node>();
+    private int currPos = 0;
 
     //pathfinder
     private List<Edge> edges = new List<Edge>(); //only for gizmos
-    // private List<Node> neighbours = new List<Node>();
-    public List<Node> neighbours = new List<Node>();
-    public List<Node> getNeighbours {get{return neighbours;}} //performance is a bit low..?
     [SerializeField] private List<Node> excludedNodes = new List<Node>();
+    //public so that pathfinder can easily access
+    public List<Node> neighbours = new List<Node>();
 
     private Graph myGraph;
-    public Graph graph{set{myGraph = value;}}
 
     private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
     private Node pi; //used to find the path -> predecessor node
 
-    // invoked when Player enters this node
-    // public UnityEvent gameEvent;
-
     //audio
     [SerializeField] private int blockLength; //0- short; 1 - medium; 2 - long
 
-    //let other classes get set the pNode
+    //getters + setters
+    public Rune rune{get{return myRune;} set{myRune = value;}}
+    public GameObject getObject{get{return this.gameObject;}}
+    public Graph graph{set{myGraph = value;}}
+        //pathfinder
     public Node predNode { get { return pi; } set { pi = value; } }
     public int colour {get{return c;} set{c = value;}}
 
-    public static Vector3[] neighbourDir = //{east, west, north, south}
-    {new Vector3(1f, 0f, 0f), new Vector3(-1f, 0f, 0f), new Vector3(0f, 0f, 1f), new Vector3(0f, 0f, -1f)};
 
-
+    // ========================== METHODS =================================
     //automatically connect interactables
     private void Awake(){
-        foreach (Node n in connections){
-            if (n!= null) n.interactableObj = this;
-        }
-        neighbours.RemoveAll(node => node == null);
+        //ensure there are no null nodes in node arrays
+        if (neighbours.Count != 0) neighbours.RemoveAll(node => node == null);
     }
 
-    public void moveToNext(){
+    private void Start(){
+        if (positions.Count != 0){
+            findConnections();
+            foreach (Node n in connections){
+                if (n!= null) {
+                    n.tag = this.tag;
+                }
+            }
+        }
+    }
+
+    private void findConnections(){ //adjusted from free code below
+        foreach (Vector3 vec in positions){
+            foreach(Vector3 v in myGraph.neighbourDir){
+                Debug.Log("checking pos");
+                Node n = myGraph.findObjectNodeAt(vec + v);
+                if (n != null && !connections.Contains(n) && !excludedNodes.Contains(n))
+                    connections.Add(n);
+            }
+        }
+    }
+
+    public void moveToNext(){ //only for up+down, side<->side blocks
         if(!isMoving){
             Vector3 a = this.transform.parent.transform.position;
-            currConnection = currConnection++ >= positions.Count-1 ? 0 : currConnection++;
-            // Debug.Log(currConnection);
-            StartCoroutine(moveFromTo(a, positions[currConnection], platformSpeed));
+            currPos = currPos++ >= positions.Count-1 ? 0 : currPos++;
+            // Debug.Log(currPos);
+            StartCoroutine(moveFromTo(a, positions[currPos], platformSpeed));
         }
     }
 
     IEnumerator moveFromTo(Vector3 a, Vector3 b, float speed){
-        removeNeighbours();
+        removeAdjNeighbours();
         isMoving = true;
         float step = (speed / (a - b).magnitude) * Time.fixedDeltaTime;
         float t = 0;
@@ -79,21 +90,25 @@ public class Node : MonoBehaviour
             yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
         }
         this.transform.parent.transform.position = b;
-        updateNeighbour(connections[currConnection]);
+        findAdjNeighbours();
         isMoving = false;
     }
 
-    private void removeNeighbours(){
+    private void removeAdjNeighbours(){
         foreach (Node n in connections){
             if (n != null) n.neighbours.Remove(this);
         }
         neighbours.Clear();
     }
 
-    private void updateNeighbour(Node n){
-        if (n == null) return;
-        n.neighbours.Add(this);
-        neighbours.Add(n);
+    private void findAdjNeighbours(){ //adjusted from free code below
+        foreach(Vector3 v in myGraph.neighbourDir){
+            Node n = myGraph.findNodeAt(transform.position + v);
+            if (n != null && !neighbours.Contains(n) && !excludedNodes.Contains(n)){
+                neighbours.Add(n);
+                n.neighbours.Add(this);
+            }
+        }
     }
 
     public void playSound(AudioManager am){
@@ -135,7 +150,7 @@ public class Node : MonoBehaviour
     */
 
     public void findNeighbours(){
-        foreach(Vector3 v in neighbourDir){
+        foreach(Vector3 v in myGraph.neighbourDir){
             Node n = myGraph.findNodeAt(transform.position + v);
             // Debug.Log(n.name);
             // if (!neighbours.Contains(n)) Debug.Log("does not contain this node");

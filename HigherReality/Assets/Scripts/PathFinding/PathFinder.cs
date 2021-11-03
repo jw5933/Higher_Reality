@@ -16,7 +16,7 @@ public class PathFinder : MonoBehaviour
     private Stack<Node> pathStack  = new Stack<Node>();
     private List<Node> path = new List<Node>();
 
-    public bool foundEnd;
+    private bool foundEnd;
 
     public Node startNode{set {sNode = value;}}
     public Node endNode{get{return eNode;} set {eNode = value;}}
@@ -32,9 +32,15 @@ public class PathFinder : MonoBehaviour
         // Debug.Log("Curr node: " + sNode.name + " End node: " + eNode.name);
         
         resetNodes();
-        pathBFS();
+        if (sNode == eNode) finishPath();
+        else pathBFS();
 
         return path;
+    }
+
+    private void finishPath(){
+        path.Clear();
+        path.Add(sNode);
     }
 
     private void pathBFS(){ //iterate through all possible paths, stopping when we've reached the goal.
