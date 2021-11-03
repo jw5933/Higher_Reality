@@ -57,13 +57,13 @@ public class GameManager : MonoBehaviour
     }
 
     void interactWithRune(){
-        if(currNode.tag == currRune.tag){
+        // if(currNode.tag == currRune.tag){
             foreach (Node n in currRune.interactableGroup){
                 Debug.Log(n.name);
                 n.moveToNext();
                 n.playSound(audioManager);
             }
-        }
+        // }
     }
 
     void checkDrop(){
