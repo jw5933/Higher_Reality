@@ -72,12 +72,28 @@ public class GameManager : MonoBehaviour
     void handleDrop(){
         if (currNode == null || currRune == null) return;
         //place the rune on the current node
-        if (currNode.rune !=null) return; //cannot drop the rune if there is already one there
+        if (currNode.rune !=null){
+            swapDrop(); //cannot drop the rune if there is already one there
+            return;
+        }
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
 
         audioManager.playRuneSound(1);
         currRune.moveTo(currNode.transform.position, false);
+    }
+
+    void swapDrop(){
+        Rune temp = player.rune;
+        player.rune = currNode.rune;
+        currRune = player.rune;
+        currNode.rune = temp; //remove the rune from the node
+        currRune.currObj = player.gameObject;
+        currNode.rune.currObj = currNode.gameObject;
+
+        audioManager.playRuneSound(0);
+        currRune.moveTo(player.runePos, true);
+        temp.moveTo(currNode.transform.position, false);
     }
 }
