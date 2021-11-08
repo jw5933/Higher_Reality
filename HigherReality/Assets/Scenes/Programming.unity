@@ -4156,7 +4156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1672357771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,8 +4169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 0}
-  myRuneObj: {fileID: 0}
+  myRuneHover: {fileID: 939302636}
+  myRuneObj: {fileID: 939302636}
   interactableGroup: []
 --- !u!4 &1672357772
 Transform:
@@ -4629,7 +4629,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf59357f861a5cb43b31ac471652b4c3, type: 2}
+  - {fileID: 2100000, guid: b05993c7a2b1c684baf0cf0ceecc10a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

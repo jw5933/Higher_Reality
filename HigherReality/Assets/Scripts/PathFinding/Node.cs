@@ -62,7 +62,7 @@ public class Node : MonoBehaviour
     private void findConnections(){ //adjusted from free code below
         foreach (Vector3 vec in positions){
             foreach(Vector3 v in myGraph.neighbourDir){
-                Debug.Log("checking pos");
+                // Debug.Log("checking pos");
                 Node n = myGraph.findObjectNodeAt(vec + v);
                 if (n != null && !connections.Contains(n) && !excludedNodes.Contains(n))
                     connections.Add(n);
