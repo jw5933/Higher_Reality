@@ -26,55 +26,74 @@ public class GameManager : MonoBehaviour
             currNode = player.node;
             currRune = player.rune;
 
-            checkRuneExists();
+            interactWithRune();
         }
-        if (Input.GetKeyDown(KeyCode.D)){
-            Debug.Log("checking d");
-            if (!player.checkIsMoving){
-                Debug.Log("checked d and player is not moving");
-                currNode = player.node;
-                currRune = player.rune;
-                checkDrop();
-            }
+        else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)){
+            currNode = player.node;
+            currRune = player.rune;
+            checkRune();
         }
     }
 
-    void checkRuneExists(){
+    void checkRune(){
         if (currNode == null) return;
         if (currRune == null){
-            if (currNode.rune != null){
-                player.rune = currNode.rune;
-                currRune = player.rune;
-                currNode.rune = null; //remove the rune from the node
-                currRune.currObj = player.gameObject;
-
-                audioManager.playRuneSound(0);
-                currRune.moveTo(player.runePos, true, camSystem.isOn2d);
-            }
-            
+            pickUpRune();
         }
-        else interactWithRune();
+        else{
+            handleDrop();
+        }
+    }
+
+    void pickUpRune(){
+        if (currNode == null) return;
+        if (currNode.rune != null){
+            player.rune = currNode.rune;
+            currRune = player.rune;
+            currNode.rune = null; //remove the rune from the node
+            currRune.currObj = player.gameObject;
+
+            audioManager.playRuneSound(0);
+            currRune.moveTo(player.runePos, true);
+        }
     }
 
     void interactWithRune(){
-        if(currNode.tag == currRune.tag){
+        if (currNode == null || currRune == null) return;
+        // if(currNode.tag == currRune.tag){
             foreach (Node n in currRune.interactableGroup){
                 Debug.Log(n.name);
                 n.moveToNext();
                 n.playSound(audioManager);
             }
-        }
+        // }
     }
 
-    void checkDrop(){
+    void handleDrop(){
         if (currNode == null || currRune == null) return;
         //place the rune on the current node
-        if (currNode.rune !=null) return; //cannot drop the rune if there is already one there
+        if (currNode.rune !=null){
+            swapDrop(); //cannot drop the rune if there is already one there
+            return;
+        }
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
 
         audioManager.playRuneSound(1);
-        currRune.moveTo(currNode.transform.position, false, camSystem.isOn2d);
+        currRune.moveTo(currNode.transform.position, false);
+    }
+
+    void swapDrop(){
+        Rune temp = player.rune;
+        player.rune = currNode.rune;
+        currRune = player.rune;
+        currNode.rune = temp; //remove the rune from the node
+        currRune.currObj = player.gameObject;
+        currNode.rune.currObj = currNode.gameObject;
+
+        audioManager.playRuneSound(0);
+        currRune.moveTo(player.runePos, true);
+        temp.moveTo(currNode.transform.position, false);
     }
 }

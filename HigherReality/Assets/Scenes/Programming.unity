@@ -1950,16 +1950,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96e7dcabccca40fe975d7282ade3577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam3d: {fileID: 1093512758}
-  cams2d:
+  allCams:
+  - {fileID: 1093512758}
   - {fileID: 1592540430}
   - {fileID: 35816734}
   - {fileID: 1506161922}
   - {fileID: 2099231271}
   - {fileID: 1276451035}
   gameManager: {fileID: 2066321275}
-  runes:
-  - {fileID: 1067058566}
 --- !u!1 &771097900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,8 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRune3d: {fileID: 969918331}
-  myRune2d: {fileID: 2082234256}
+  myRuneHover: {fileID: 2082234256}
   myRuneObj: {fileID: 2082234256}
   interactableGroup:
   - {fileID: 66351682}
@@ -4159,7 +4156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1672357771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4172,9 +4169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRune3d: {fileID: 0}
-  myRune2d: {fileID: 0}
-  myRuneObj: {fileID: 0}
+  myRuneHover: {fileID: 939302636}
+  myRuneObj: {fileID: 939302636}
   interactableGroup: []
 --- !u!4 &1672357772
 Transform:
@@ -4523,7 +4519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b46c71d3f1a438cb9be7b7c92d7cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allNodes: []
+  maxMagnitude: 0.1
   maxNodeDistance: 1
 --- !u!4 &1992522841
 Transform:
@@ -4633,7 +4629,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf59357f861a5cb43b31ac471652b4c3, type: 2}
+  - {fileID: 2100000, guid: b05993c7a2b1c684baf0cf0ceecc10a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

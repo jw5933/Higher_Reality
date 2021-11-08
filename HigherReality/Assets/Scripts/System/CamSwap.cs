@@ -4,51 +4,51 @@ using UnityEngine;
 
 public class CamSwap : MonoBehaviour
 {
-    [SerializeField] GameObject cam3d;
-    [SerializeField] List<GameObject> cams2d;
+    GameObject camSaved;
+    [SerializeField] List<GameObject> allCams;
     [SerializeField] GameManager gameManager;
 
     int currCam = 0;
-    bool onCams2d = false;
-    public bool isOn2d{get{return onCams2d;}}
+    bool onCamSaved = false;
+    private Rune[] runes;
 
-    [SerializeField] private List<Rune> runes;
-
+    void Awake(){
+        runes = FindObjectsOfType<Rune>();
+        camSaved = allCams[0];
+    }
     void Update()
     {
-        if(onCams2d && Input.GetKeyDown(KeyCode.UpArrow)){
-            onCams2d = false;
+        if(Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)){
+            onCamSaved = true;
 
-            //change how runes look for visibility
-            foreach(Rune r in runes){
-                r.changeRune(false, onCams2d);
-            }
-            gameManager.rune?.changeRune(true, onCams2d);
-            
-            cam3d.SetActive(true);
-            foreach(GameObject cam in cams2d){
+            foreach(GameObject cam in allCams){
                 cam.SetActive(false);
             }
+
+            camSaved.SetActive(true);
             
         }
-        else if (!onCams2d && Input.GetKeyDown(KeyCode.DownArrow)){
-            onCams2d = true;
-
-            //change how runes look for visibility
-            foreach(Rune r in runes){
-                r.changeRune(false, onCams2d);
+        else if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow)){
+            if (onCamSaved){
+                foreach(GameObject cam in allCams){
+                    cam.SetActive(false);
+                }
+                allCams[currCam].SetActive(true);
             }
-
-            cam3d.SetActive(false);
-            cams2d[currCam].SetActive(true);
+            else{
+                saveCam();
+            }
+            onCamSaved = false;
         }
-        else if (onCams2d && Input.GetKeyDown(KeyCode.LeftArrow)){
-            if (currCam == 0) currCam = cams2d.Count-1;
+        else if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow)){
+            onCamSaved = false;
+            if (currCam == 0) currCam = allCams.Count-1;
             else currCam--;
             swapCam();
         }
-        else if (onCams2d && Input.GetKeyDown(KeyCode.RightArrow)){
-            if (currCam == cams2d.Count-1) currCam = 0;
+        else if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.RightArrow)){
+            onCamSaved = false;
+            if (currCam == allCams.Count-1) currCam = 0;
             else currCam++;
             swapCam();
         }
@@ -56,11 +56,15 @@ public class CamSwap : MonoBehaviour
 
 
     void swapCam(){
-        cam3d.SetActive(false);
-        foreach(GameObject cam in cams2d){
+        // camSaved.SetActive(false);
+        foreach(GameObject cam in allCams){
             cam.SetActive(false);
         }
 
-        cams2d[currCam].SetActive(true);
+        allCams[currCam].SetActive(true);
+    }
+
+    void saveCam(){
+        camSaved = allCams[currCam];
     }
 }
