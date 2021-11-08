@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ee49ccce56c15498dba0d38c1cc88ccc, type: 2}
+  - {fileID: 2100000, guid: 4cee9af94a19dbf48bf77b5ff1ec8400, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,8 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efff4382c2bf4dcd9a87d64b7991157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childNode: {fileID: 0}
-  nodes: []
 --- !u!1 &6250850364602117668
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,13 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fc3438cdff846c3924900c7fa84258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neighbours: []
+  platformSpeed: 1
+  positions: []
   excludedNodes: []
-  graph: {fileID: 0}
-  gameEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  gizmoRadius: 0.1
-  defaultGizmoColor: {r: 0, g: 0, b: 0, a: 1}
-  selectedGizmoColor: {r: 0, g: 0, b: 1, a: 1}
-  inactiveGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  neighbours: []
+  blockLength: 0

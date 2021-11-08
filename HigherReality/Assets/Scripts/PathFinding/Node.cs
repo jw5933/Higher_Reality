@@ -155,8 +155,8 @@ public class Node : MonoBehaviour
             // Debug.Log(n.name);
             // if (!neighbours.Contains(n)) Debug.Log("does not contain this node");
             if (n != null && !neighbours.Contains(n) && !excludedNodes.Contains(n)){
-                Edge newEdge = new Edge(n, true);
-                edges.Add(newEdge);
+                // Edge newEdge = new Edge(n, true);
+                // edges.Add(newEdge);
                 neighbours.Add(n);
             }
         }
