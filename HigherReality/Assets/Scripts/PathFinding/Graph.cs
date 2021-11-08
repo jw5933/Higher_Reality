@@ -33,7 +33,6 @@ public class Graph : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        arr = allNodes.ToArray();
         initNeighbours();
     }
 
@@ -44,8 +43,7 @@ public class Graph : MonoBehaviour
     }
 
     // set neighbors for each Node; must run AFTER all Nodes are initialized
-    private void initNeighbours()
-    {
+    private void initNeighbours(){
         foreach (Node n in allNodes){
             if (n != null){
                 n.findNeighbours();

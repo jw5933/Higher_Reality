@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 3f;
 
     // click indicator
-    // [SerializeField] Cursor cursor;
+    [SerializeField] Cursor cursor;
     // cursor AnimationController
     //private Animator cursorAnimController;
 
@@ -25,11 +25,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
     private bool isControlEnabled;
 
-    // private PlayerAnimation playerAnimation;
+    [SerializeField]private Animator playerAnim;
 
     //rune and interactables
     private Rune myRune;
     [SerializeField] private Transform runeTransform;
+    [SerializeField] private Renderer myRenderer;
 
     // get-sets
     public Vector3 runePos{get{return runeTransform.position;}}
@@ -37,17 +38,15 @@ public class PlayerMovement : MonoBehaviour
     public Rune rune{get{return myRune;} set{myRune = value;}}
     public bool checkIsMoving{get{return isMoving;}}
 
-
-
+    public Material mat{set{myRenderer.material = value;}}
     private void Awake()
     {
         //  initialize fields
         clickables = FindObjectsOfType<Clickable>();
         pathfinder = FindObjectOfType<PathFinder>();
         graph = FindObjectOfType<Graph>();
+        // myRenderer = GetComponent<Renderer>();
         
-        // playerAnimation = GetComponent<PlayerAnimation>();
-
         // if (pathfinder != null)
         // {
         //     graph = pathfinder.GetComponent<Graph>();
@@ -102,20 +101,20 @@ public class PlayerMovement : MonoBehaviour
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
         
 
-        // show a marker for the mouse click
-        // if (cursor != null)
-        // {
-        //     cursor.ShowCursor(position);
-        // }
 
         // if we have a valid path, follow it
         if (newPath.Count > 0){
+            // show a marker for the mouse click
+            if (cursor != null)
+                cursor.showCursor(position, true);
             StartCoroutine(followPathRoutine(newPath));
         }
         else{
             // otherwise, invalid path, stop movement
             isMoving = false;
-            // UpdateAnimation();
+            if (cursor != null)
+                cursor.showCursor(clickable.childNode.transform.position, false);
+            updateAnimation(false);
         }
     }
 
@@ -129,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // UpdateAnimation();
+            updateAnimation(true);
 
             // loop through all Nodes
             // while (path.Count > 0)
@@ -140,17 +139,16 @@ public class PlayerMovement : MonoBehaviour
                 // path.RemoveAt(0);
 
                 // aim at the Node after that to minimize flipping
-                // int nextAimIndex = Mathf.Clamp(i + 1, 0, path.Count - 1);
-                // Node aimNode = path[nextAimIndex];
-                // faceNextPosition(transform.position, aimNode.transform.position);
+                int nextAimIndex = Mathf.Clamp(i + 1, 0, path.Count - 1);
+                Node aimNode = path[nextAimIndex];
+                faceNextPosition(transform.position, aimNode.transform.position);
 
                 // move to the next Node
-                // yield return StartCoroutine(moveToNodeRoutine(transform.position, nextNode));
                 yield return StartCoroutine(moveToRoutine(transform.position, nextNode));
             }
         }
         isMoving = false;
-        // UpdateAnimation();
+        updateAnimation(false);
 
     }
 
@@ -215,13 +213,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // toggle between Idle and Walk animations
-    // private void UpdateAnimation()
-    // {
-    //     if (playerAnimation != null)
-    //     {
-    //         playerAnimation.ToggleAnimation(isMoving);
-    //     }
-    // }
+    private void updateAnimation(bool state)
+    {
+        if (playerAnim != null){
+            playerAnim?.SetBool("Walking", state);
+        }
+    }
 
     // have we reached a specific Node?
     public bool hasReachedNode(Node node)
