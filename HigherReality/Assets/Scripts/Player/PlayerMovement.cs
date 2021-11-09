@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 3f;
 
     // click indicator
-    [SerializeField] Cursor cursor;
+    Cursor cursor;
     // cursor AnimationController
     //private Animator cursorAnimController;
 
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         clickables = FindObjectsOfType<Clickable>();
         pathfinder = FindObjectOfType<PathFinder>();
         graph = FindObjectOfType<Graph>();
+        cursor = FindObjectOfType<Cursor>();
         // myRenderer = GetComponent<Renderer>();
         
         // if (pathfinder != null)

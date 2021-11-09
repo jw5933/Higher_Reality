@@ -25,9 +25,9 @@ public class Cursor : MonoBehaviour
         }
     }
     public void showCursor(Vector3 pos, bool pathExists){
-            updateDir();
-            Vector3 cameraForwardOffset = cam.transform.rotation * new Vector3(0f, 0f, offsetDistance);
-            transform.position = pos - cameraForwardOffset;
+        updateDir();
+        Vector3 cameraForwardOffset = cam.transform.rotation * new Vector3(0f, 0f, offsetDistance);
+        transform.position = pos - cameraForwardOffset;
         if (pathExists){
             animController.SetTrigger("clickedTrue");
         }
