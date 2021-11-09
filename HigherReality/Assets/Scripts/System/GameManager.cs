@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     AudioManager audioManager;
     PlayerMovement player;
+    public Material playerDefaultMat;
     Node currNode;
     Rune currRune;
     CamSwap camSystem;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         player = FindObjectOfType<PlayerMovement>();
         camSystem = FindObjectOfType<CamSwap>();
+        
     }
 
     // Update is called once per frame
@@ -52,6 +54,8 @@ public class GameManager : MonoBehaviour
             currRune = player.rune;
             currNode.rune = null; //remove the rune from the node
             currRune.currObj = player.gameObject;
+            //set the player's material to the rune's colour
+            player.mat = currRune.playerMaterial;
 
             audioManager.playRuneSound(0);
             currRune.moveTo(player.runePos, true);
@@ -79,6 +83,8 @@ public class GameManager : MonoBehaviour
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
+        //set the player's material to the default player material
+        player.mat = playerDefaultMat;
 
         audioManager.playRuneSound(1);
         currRune.moveTo(currNode.transform.position, false);
@@ -91,6 +97,8 @@ public class GameManager : MonoBehaviour
         currNode.rune = temp; //remove the rune from the node
         currRune.currObj = player.gameObject;
         currNode.rune.currObj = currNode.gameObject;
+        //set the player's material to the rune's colour
+        player.mat = currRune.playerMaterial;
 
         audioManager.playRuneSound(0);
         currRune.moveTo(player.runePos, true);
