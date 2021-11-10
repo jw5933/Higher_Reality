@@ -152,8 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 1550517809}
-  myRuneObj: {fileID: 1550517809}
   playerMaterial: {fileID: 2100000, guid: 14c78eff9393a054e96901eb25b435ba, type: 2}
   interactableGroup:
   - {fileID: 744915720}
@@ -1432,6 +1430,10 @@ PrefabInstance:
       value: PlatformThin (46)
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
       value: UpDown
       objectReference: {fileID: 0}
@@ -2325,11 +2327,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5157204726166250571, guid: 803b4fc69018f864b82ee74df3663088, type: 3}
   m_PrefabInstance: {fileID: 234143865}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &245812314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
-  m_PrefabInstance: {fileID: 1086091877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &245812318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5213006171857098655, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
@@ -2594,8 +2591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 1121178995}
-  myRuneObj: {fileID: 1121178995}
   playerMaterial: {fileID: 2100000, guid: 5871bb0d189fc824eb65c4ed8274cc00, type: 2}
   interactableGroup:
   - {fileID: 1645709576}
@@ -2608,7 +2603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301650961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0021898, y: 0.525, z: -0.043632}
+  m_LocalPosition: {x: 0.0021898, y: 0.525, z: 1.014}
   m_LocalScale: {x: 1.574265, y: 1.574265, z: 1.574265}
   m_Children:
   - {fileID: 1119666507}
@@ -5692,6 +5687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDefaultMat: {fileID: 2100000, guid: 978099cbffa83d847b8847053fe5e63a, type: 2}
+  scaleDownBy: {x: 0.5, y: 2, z: 0.5}
 --- !u!4 &815852063
 Transform:
   m_ObjectHideFlags: 0
@@ -5961,8 +5957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 1581059193}
-  myRuneObj: {fileID: 1581059193}
   playerMaterial: {fileID: 2100000, guid: ac2a3147fa25e8d439c94899586331aa, type: 2}
   interactableGroup:
   - {fileID: 1861839670}
@@ -6527,8 +6521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 1863671875}
-  myRuneObj: {fileID: 1863671875}
   playerMaterial: {fileID: 2100000, guid: b109c0930b8292340ae6fd5432130293, type: 2}
   interactableGroup:
   - {fileID: 817113610}
@@ -6889,11 +6881,6 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 364736884259888608, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
   m_PrefabInstance: {fileID: 921708187}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &921798349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
-  m_PrefabInstance: {fileID: 144897641}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &921798353 stripped
 Transform:
@@ -7748,6 +7735,10 @@ PrefabInstance:
       value: PlatformThin (48)
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
       value: UpDown
       objectReference: {fileID: 0}
@@ -7802,8 +7793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 245812314}
-  myRuneObj: {fileID: 245812314}
   playerMaterial: {fileID: 2100000, guid: 892a49ab2c07bc64cacecfe39d5559ea, type: 2}
   interactableGroup:
   - {fileID: 699345752}
@@ -8357,6 +8346,10 @@ PrefabInstance:
       value: PlatformThin (44)
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
       value: UpDown
       objectReference: {fileID: 0}
@@ -8538,11 +8531,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d5116386cdf8434eabc9cc5d0e13a8b, type: 3}
   m_PrefabInstance: {fileID: 1121178993}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1121178995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d5116386cdf8434eabc9cc5d0e13a8b, type: 3}
-  m_PrefabInstance: {fileID: 1121178993}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1144021233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8422859638992205559, guid: 0a738b5a6e3750244b39d67f5981f1b4, type: 3}
@@ -8618,6 +8606,10 @@ PrefabInstance:
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_Name
       value: PlatformThin (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
@@ -9151,8 +9143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 1878698980}
-  myRuneObj: {fileID: 1878698980}
   playerMaterial: {fileID: 2100000, guid: 17412f99b4acf7e43971f062dce5f222, type: 2}
   interactableGroup:
   - {fileID: 1214319644}
@@ -9564,8 +9554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b753820fbf6a47eca5401fdf4fbbd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRuneHover: {fileID: 921798349}
-  myRuneObj: {fileID: 921798349}
   playerMaterial: {fileID: 2100000, guid: dd67ceff2e0034c42b88307abc7de074, type: 2}
   interactableGroup:
   - {fileID: 745473305}
@@ -10313,6 +10301,10 @@ PrefabInstance:
       value: PlatformThin (43)
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
       value: UpDown
       objectReference: {fileID: 0}
@@ -11049,11 +11041,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 364736884259888608, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
   m_PrefabInstance: {fileID: 1546612761}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1550517809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
-  m_PrefabInstance: {fileID: 1620649895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1550517813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5213006171857098655, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
@@ -11135,11 +11122,6 @@ PrefabInstance:
 --- !u!4 &1581059192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b22ff1a440a1a44a816971bd5d7b6f5, type: 3}
-  m_PrefabInstance: {fileID: 1581059191}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1581059193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b22ff1a440a1a44a816971bd5d7b6f5, type: 3}
   m_PrefabInstance: {fileID: 1581059191}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1586413452
@@ -12225,6 +12207,10 @@ PrefabInstance:
       value: PlatformThin (47)
       objectReference: {fileID: 0}
     - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142659547586571101, guid: 97b1e733bb5a09345a34df22a9588e47, type: 3}
       propertyPath: m_TagString
       value: UpDown
       objectReference: {fileID: 0}
@@ -12907,11 +12893,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
---- !u!1 &1863671875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213006171857098642, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
-  m_PrefabInstance: {fileID: 1863671874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1863671876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5213006171857098655, guid: 05f8446c33426b44ca2fa2c2eba0911a, type: 3}
@@ -13090,11 +13071,6 @@ PrefabInstance:
 --- !u!4 &1878698979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53e05ff3cb8f5534183fd6b361ad59bd, type: 3}
-  m_PrefabInstance: {fileID: 1878698978}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1878698980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 53e05ff3cb8f5534183fd6b361ad59bd, type: 3}
   m_PrefabInstance: {fileID: 1878698978}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1895099265
