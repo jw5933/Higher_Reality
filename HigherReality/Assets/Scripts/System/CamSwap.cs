@@ -11,13 +11,13 @@ public class CamSwap : MonoBehaviour
     int currCam = 0;
     bool onCamSaved = false;
     private Rune[] runes;
+    public GameObject currCamera{get{return allCams[currCam];}}
 
     void Awake(){
         runes = FindObjectsOfType<Rune>();
         camSaved = allCams[0];
     }
-    void Update()
-    {
+    void Update(){
         if(Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)){
             onCamSaved = true;
 
