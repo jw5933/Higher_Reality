@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Animator runeAnimator;
     AudioManager audioManager;
     PlayerMovement player;
     public Material playerDefaultMat;
@@ -105,5 +107,11 @@ public class GameManager : MonoBehaviour
         audioManager.playRuneSound(0);
         currRune.moveTo(player.runePos, true);
         temp.moveTo(currNode.transform.position, false);
+    }
+
+    public void playRuneAnim(AnimatorController newController){
+        // Debug.Log(newMotion);
+        runeAnimator.runtimeAnimatorController = newController;
+        runeAnimator.SetTrigger("runeUI");
     }
 }
