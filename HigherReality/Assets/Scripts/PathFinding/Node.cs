@@ -39,7 +39,7 @@ public class Node : MonoBehaviour
         //pathfinder
     public Node predNode { get { return pi; } set { pi = value; } }
     public int colour {get{return c;} set{c = value;}}
-
+    public Material mat{set{this.transform.parent.GetComponent<Renderer>().material = value;}}
 
     // ========================== METHODS =================================
     //automatically connect interactables

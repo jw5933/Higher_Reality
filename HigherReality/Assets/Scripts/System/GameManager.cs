@@ -5,10 +5,13 @@ using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] bool togglePlatformColours;
     [SerializeField] private Animator runeAnimator;
     AudioManager audioManager;
     PlayerMovement player;
-    public Material playerDefaultMat;
+    [SerializeField]private Material playerDefaultMat;
+    [SerializeField]private Material platformDefaultMat;
+
     Node currNode;
     Rune currRune;
     CamSwap camSystem;
@@ -58,8 +61,10 @@ public class GameManager : MonoBehaviour
             currRune = player.rune;
             currNode.rune = null; //remove the rune from the node
             currRune.currObj = player.gameObject;
+            
             //set the player's material to the rune's colour
             player.mat = currRune.playerMaterial;
+            changeInteractableColour(currRune, currRune.playerMaterial);
 
             audioManager.playRuneSound(0);
             currRune.moveTo(player.runePos, true);
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
         currRune.currObj = currNode.gameObject;
         //set the player's material to the default player material
         player.mat = playerDefaultMat;
+        changeInteractableColour(currRune, platformDefaultMat);
 
         audioManager.playRuneSound(1);
         currRune.moveTo(currNode.transform.position, false);
@@ -103,6 +109,8 @@ public class GameManager : MonoBehaviour
         currNode.rune.currObj = currNode.gameObject;
         //set the player's material to the rune's colour
         player.mat = currRune.playerMaterial;
+        changeInteractableColour(currRune, currRune.playerMaterial);
+        changeInteractableColour(currNode.rune, platformDefaultMat);
 
         audioManager.playRuneSound(0);
         currRune.moveTo(player.runePos, true);
@@ -113,5 +121,12 @@ public class GameManager : MonoBehaviour
         // Debug.Log(newMotion);
         runeAnimator.runtimeAnimatorController = newController;
         runeAnimator.SetTrigger("runeUI");
+    }
+
+    void changeInteractableColour(Rune r, Material m){
+        if (!togglePlatformColours) return;
+        foreach(Node n in r.interactableGroup){
+            n.mat = m;
+        }
     }
 }
