@@ -113,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
         else{
             // otherwise, invalid path, stop movement
             isMoving = false;
-            if (cursor != null)
-                cursor.showCursor(clickable.childNode.transform.position, false);
+            // if (cursor != null)
+            //     cursor.showCursor(clickable.childNode.transform.position, false);
             updateAnimation(false);
         }
     }

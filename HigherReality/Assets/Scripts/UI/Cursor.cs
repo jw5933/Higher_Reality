@@ -31,9 +31,9 @@ public class Cursor : MonoBehaviour
         if (pathExists){
             animController.SetTrigger("clickedTrue");
         }
-        else{
-            animController.SetTrigger("clickedFalse");
-        }
+        // else{
+        //     animController.SetTrigger("clickedFalse");
+        // }
     }
 }
 
