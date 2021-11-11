@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     Node currNode;
     Rune currRune;
     CamSwap camSystem;
-    private Vector3 scaleDownBy = new Vector3(0.5f, 0.5f, 0.5f);
+    [SerializeField] private Vector3 scaleDownBy = new Vector3(0.5f, 0.5f, 0.5f);
     public Vector3 scaleChange {get{return scaleDownBy;}}
     public Rune rune{get{return currRune;}}
 
