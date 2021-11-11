@@ -10,6 +10,7 @@ public class Rune : MonoBehaviour
     private GameObject nodeOrPlayer = null;
     // [SerializeField] private GameObject myRuneObj;
     public Material playerMaterial;
+    public Material platformMaterial;
     public List<Node> interactableGroup = new List<Node>();
 
     public GameObject currObj{get{return nodeOrPlayer;} set{nodeOrPlayer = value;}}
