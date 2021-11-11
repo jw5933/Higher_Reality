@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
             
             //set the player's material to the rune's colour
             player.mat = currRune.playerMaterial;
-            changeInteractableColour(currRune, currRune.platformMaterial);
+        changeInteractableColour(currRune, (currRune.platformMaterial != null? currRune.platformMaterial: currRune.playerMaterial));
 
             audioManager.playRuneSound(0);
             currRune.moveTo(player.runePos, true);
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         currNode.rune.currObj = currNode.gameObject;
         //set the player's material to the rune's colour
         player.mat = currRune.playerMaterial;
-        changeInteractableColour(currRune, currRune.platformMaterial);
+        changeInteractableColour(currRune, (currRune.platformMaterial != null? currRune.platformMaterial: currRune.playerMaterial));
         changeInteractableColour(currNode.rune, platformDefaultMat);
 
         audioManager.playRuneSound(0);
