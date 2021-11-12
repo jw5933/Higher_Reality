@@ -1,223 +1,223 @@
 fileFormatVersion: 2
-guid: 8f073c1fc023bab4b8bc2b27dae12cae
+guid: df19d9ba4f73948449ca8824d6b94a52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8187148219533068596
-    second: YellowSpriteSheet_0
+      213: 1244195938306176562
+    second: Turq Spritesheet_0
   - first:
-      213: -9160769891972555444
-    second: YellowSpriteSheet_1
+      213: 1956455664335749962
+    second: Turq Spritesheet_1
   - first:
-      213: -5692578224714269664
-    second: YellowSpriteSheet_2
+      213: 3094775673961065937
+    second: Turq Spritesheet_2
   - first:
-      213: -7614127850046095749
-    second: YellowSpriteSheet_3
+      213: 8880925875159757984
+    second: Turq Spritesheet_3
   - first:
-      213: -6215472080819520652
-    second: YellowSpriteSheet_4
+      213: -8490016129091146452
+    second: Turq Spritesheet_4
   - first:
-      213: 9127894626380100464
-    second: YellowSpriteSheet_5
+      213: 8384901256937165273
+    second: Turq Spritesheet_5
   - first:
-      213: -3770295991863359496
-    second: YellowSpriteSheet_6
+      213: -122540074096679934
+    second: Turq Spritesheet_6
   - first:
-      213: -2573969168536984362
-    second: YellowSpriteSheet_7
+      213: -5028472540514362174
+    second: Turq Spritesheet_7
   - first:
-      213: 5596251866255714037
-    second: YellowSpriteSheet_8
+      213: -3075125468563407575
+    second: Turq Spritesheet_8
   - first:
-      213: 5949471867991592638
-    second: YellowSpriteSheet_9
+      213: -3734654174745042914
+    second: Turq Spritesheet_9
   - first:
-      213: -8572554526071432754
-    second: YellowSpriteSheet_10
+      213: -8036512648030856972
+    second: Turq Spritesheet_10
   - first:
-      213: -1289108530029629529
-    second: YellowSpriteSheet_11
+      213: -7504142786739112352
+    second: Turq Spritesheet_11
   - first:
-      213: -7999736734994046239
-    second: YellowSpriteSheet_12
+      213: 3636452472817632548
+    second: Turq Spritesheet_12
   - first:
-      213: -7755216070869747378
-    second: YellowSpriteSheet_13
+      213: -2803965982068429033
+    second: Turq Spritesheet_13
   - first:
-      213: 4581123216422737380
-    second: YellowSpriteSheet_14
+      213: 894678250110268575
+    second: Turq Spritesheet_14
   - first:
-      213: 6821557921941396495
-    second: YellowSpriteSheet_15
+      213: 8557372104297163648
+    second: Turq Spritesheet_15
   - first:
-      213: 2453387497369592018
-    second: YellowSpriteSheet_16
+      213: -4764158480971758867
+    second: Turq Spritesheet_16
   - first:
-      213: 5926728044044396235
-    second: YellowSpriteSheet_17
+      213: -9124331398217933456
+    second: Turq Spritesheet_17
   - first:
-      213: 7518738327921684250
-    second: YellowSpriteSheet_18
+      213: -5716470080521379957
+    second: Turq Spritesheet_18
   - first:
-      213: 647335075743949113
-    second: YellowSpriteSheet_19
+      213: -5243123333649857510
+    second: Turq Spritesheet_19
   - first:
-      213: -2315865744293060352
-    second: YellowSpriteSheet_20
+      213: 4713086017274156080
+    second: Turq Spritesheet_20
   - first:
-      213: 8851553226851317978
-    second: YellowSpriteSheet_21
+      213: 7694055968604572997
+    second: Turq Spritesheet_21
   - first:
-      213: -3209869951532612358
-    second: YellowSpriteSheet_22
+      213: 736195729482484155
+    second: Turq Spritesheet_22
   - first:
-      213: 7712827611987052184
-    second: YellowSpriteSheet_23
+      213: -7110117834647728153
+    second: Turq Spritesheet_23
   - first:
-      213: -8618799467854056328
-    second: YellowSpriteSheet_24
+      213: -4073990850233192245
+    second: Turq Spritesheet_24
   - first:
-      213: 977385579246881432
-    second: YellowSpriteSheet_25
+      213: -757942054870860752
+    second: Turq Spritesheet_25
   - first:
-      213: 1172571600977900774
-    second: YellowSpriteSheet_26
+      213: -373516340933093471
+    second: Turq Spritesheet_26
   - first:
-      213: -8754021829467821416
-    second: YellowSpriteSheet_27
+      213: -1725486565328013030
+    second: Turq Spritesheet_27
   - first:
-      213: 1261001572477609233
-    second: YellowSpriteSheet_28
+      213: -6173266382768139345
+    second: Turq Spritesheet_28
   - first:
-      213: 2639448037422184117
-    second: YellowSpriteSheet_29
+      213: 577294889769580077
+    second: Turq Spritesheet_29
   - first:
-      213: -6984602325581297163
-    second: YellowSpriteSheet_30
+      213: -1749104438341225415
+    second: Turq Spritesheet_30
   - first:
-      213: -8017963186161361632
-    second: YellowSpriteSheet_31
+      213: 5698784617222269360
+    second: Turq Spritesheet_31
   - first:
-      213: -7936034382321682154
-    second: YellowSpriteSheet_32
+      213: 79764198333484510
+    second: Turq Spritesheet_32
   - first:
-      213: -2618393532826669636
-    second: YellowSpriteSheet_33
+      213: 2302626835329484273
+    second: Turq Spritesheet_33
   - first:
-      213: -688216307664311809
-    second: YellowSpriteSheet_34
+      213: 5154862595039265511
+    second: Turq Spritesheet_34
   - first:
-      213: 6359135017505765919
-    second: YellowSpriteSheet_35
+      213: -7590935990194765397
+    second: Turq Spritesheet_35
   - first:
-      213: 7439683946034344507
-    second: YellowSpriteSheet_36
+      213: 2187774991848966951
+    second: Turq Spritesheet_36
   - first:
-      213: 1241521847160779061
-    second: YellowSpriteSheet_37
+      213: -590637479252443139
+    second: Turq Spritesheet_37
   - first:
-      213: -7275973157688767110
-    second: YellowSpriteSheet_38
+      213: -1477556287280212589
+    second: Turq Spritesheet_38
   - first:
-      213: 4130722100627095674
-    second: YellowSpriteSheet_39
+      213: 4581311973747569919
+    second: Turq Spritesheet_39
   - first:
-      213: -402257813935749551
-    second: YellowSpriteSheet_40
+      213: 2509974457026241665
+    second: Turq Spritesheet_40
   - first:
-      213: 3558819047209412136
-    second: YellowSpriteSheet_41
+      213: 1094584684734451482
+    second: Turq Spritesheet_41
   - first:
-      213: -4932867378822949065
-    second: YellowSpriteSheet_42
+      213: 1475191434297154765
+    second: Turq Spritesheet_42
   - first:
-      213: 7174359538006006441
-    second: YellowSpriteSheet_43
+      213: -3507944174754791628
+    second: Turq Spritesheet_43
   - first:
-      213: 6468213725104423670
-    second: YellowSpriteSheet_44
+      213: 6262604787356661943
+    second: Turq Spritesheet_44
   - first:
-      213: -3302017903675582050
-    second: YellowSpriteSheet_45
+      213: 3399315321327489547
+    second: Turq Spritesheet_45
   - first:
-      213: -6033236816797216891
-    second: YellowSpriteSheet_46
+      213: 2286642350252088255
+    second: Turq Spritesheet_46
   - first:
-      213: 2693724272999300492
-    second: YellowSpriteSheet_47
+      213: 4486368050774365576
+    second: Turq Spritesheet_47
   - first:
-      213: -1602908310670774051
-    second: YellowSpriteSheet_48
+      213: 7443776537693838430
+    second: Turq Spritesheet_48
   - first:
-      213: -2679687274474421853
-    second: YellowSpriteSheet_49
+      213: -3144753545856272163
+    second: Turq Spritesheet_49
   - first:
-      213: 8075099335499608814
-    second: YellowSpriteSheet_50
+      213: 5993108181271618413
+    second: Turq Spritesheet_50
   - first:
-      213: 2445861194395308689
-    second: YellowSpriteSheet_51
+      213: -3310317229760766871
+    second: Turq Spritesheet_51
   - first:
-      213: -8100480906674395938
-    second: YellowSpriteSheet_52
+      213: -2255011346799205118
+    second: Turq Spritesheet_52
   - first:
-      213: -1809334434666535354
-    second: YellowSpriteSheet_53
+      213: 8139671964397522556
+    second: Turq Spritesheet_53
   - first:
-      213: 3810409697197767785
-    second: YellowSpriteSheet_54
+      213: 7130021073634178442
+    second: Turq Spritesheet_54
   - first:
-      213: -8825302524867682042
-    second: YellowSpriteSheet_55
+      213: -1509102060664371896
+    second: Turq Spritesheet_55
   - first:
-      213: -8346178187714328183
-    second: YellowSpriteSheet_56
+      213: 3498985949847195220
+    second: Turq Spritesheet_56
   - first:
-      213: -5122301073312665866
-    second: YellowSpriteSheet_57
+      213: -8393262840150404877
+    second: Turq Spritesheet_57
   - first:
-      213: 7792301372786081179
-    second: YellowSpriteSheet_58
+      213: -5187619306450009428
+    second: Turq Spritesheet_58
   - first:
-      213: -1156957507544806757
-    second: YellowSpriteSheet_59
+      213: -1613955065594109238
+    second: Turq Spritesheet_59
   - first:
-      213: -1983788142533138028
-    second: YellowSpriteSheet_60
+      213: -3070534515810701913
+    second: Turq Spritesheet_60
   - first:
-      213: -6405552143054610545
-    second: YellowSpriteSheet_61
+      213: 4833462712117575449
+    second: Turq Spritesheet_61
   - first:
-      213: 8782759636205658568
-    second: YellowSpriteSheet_62
+      213: -7904049408814960977
+    second: Turq Spritesheet_62
   - first:
-      213: 2792916436538291904
-    second: YellowSpriteSheet_63
+      213: -2664359644379871973
+    second: Turq Spritesheet_63
   - first:
-      213: 5100124389880237586
-    second: YellowSpriteSheet_64
+      213: -3312608253694260529
+    second: Turq Spritesheet_64
   - first:
-      213: -2760159384730619425
-    second: YellowSpriteSheet_65
+      213: -216960676220873282
+    second: Turq Spritesheet_65
   - first:
-      213: -6337070400489390757
-    second: YellowSpriteSheet_66
+      213: 5984530804754040506
+    second: Turq Spritesheet_66
   - first:
-      213: 5994978158065392049
-    second: YellowSpriteSheet_67
+      213: -1783798952425021561
+    second: Turq Spritesheet_67
   - first:
-      213: -2922425190002610274
-    second: YellowSpriteSheet_68
+      213: -2068210709911268275
+    second: Turq Spritesheet_68
   - first:
-      213: 5529512305664113025
-    second: YellowSpriteSheet_69
+      213: 8681871632613417219
+    second: Turq Spritesheet_69
   - first:
-      213: 4547900306825677786
-    second: YellowSpriteSheet_70
+      213: -1762196417842143235
+    second: Turq Spritesheet_70
   - first:
-      213: -5582919624776441876
-    second: YellowSpriteSheet_71
+      213: 5154525349783086674
+    second: Turq Spritesheet_71
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -307,12 +307,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: YellowSpriteSheet_0
+      name: Turq Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -321,19 +321,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6724b5218616e80800000000000000
-      internalID: -8187148219533068596
+      spriteID: 23639b52d95444110800000000000000
+      internalID: 1244195938306176562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_1
+      name: Turq Spritesheet_1
       rect:
         serializedVersion: 2
         x: 1600
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -342,19 +342,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4dd1efa1586ed080800000000000000
-      internalID: -9160769891972555444
+      spriteID: a43888b9f0ab62b10800000000000000
+      internalID: 1956455664335749962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_2
+      name: Turq Spritesheet_2
       rect:
         serializedVersion: 2
         x: 3200
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -363,19 +363,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02c38c3e346eff0b0800000000000000
-      internalID: -5692578224714269664
+      spriteID: 1dd28f1241ad2fa20800000000000000
+      internalID: 3094775673961065937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_3
+      name: Turq Spritesheet_3
       rect:
         serializedVersion: 2
         x: 4800
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,19 +384,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7ef79fcf0f255690800000000000000
-      internalID: -7614127850046095749
+      spriteID: 0a4f871c7036f3b70800000000000000
+      internalID: 8880925875159757984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_4
+      name: Turq Spritesheet_4
       rect:
         serializedVersion: 2
         x: 6400
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -405,19 +405,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47bf46fc2153eb9a0800000000000000
-      internalID: -6215472080819520652
+      spriteID: c2d6f2800576d2a80800000000000000
+      internalID: -8490016129091146452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_5
+      name: Turq Spritesheet_5
       rect:
         serializedVersion: 2
         x: 8000
         y: 9900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -426,19 +426,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07335901dcbccae70800000000000000
-      internalID: 9127894626380100464
+      spriteID: 9d15770a4472d5470800000000000000
+      internalID: 8384901256937165273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_6
+      name: Turq Spritesheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -447,19 +447,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f7c7e275c73dabc0800000000000000
-      internalID: -3770295991863359496
+      spriteID: 204a7bca376ac4ef0800000000000000
+      internalID: -122540074096679934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_7
+      name: Turq Spritesheet_7
       rect:
         serializedVersion: 2
         x: 1600
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -468,19 +468,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4ab8ebdac674cd0800000000000000
-      internalID: -2573969168536984362
+      spriteID: 2ccd5dbcdd6473ab0800000000000000
+      internalID: -5028472540514362174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_8
+      name: Turq Spritesheet_8
       rect:
         serializedVersion: 2
         x: 3200
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -489,19 +489,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f6e9c11c61e9ad40800000000000000
-      internalID: 5596251866255714037
+      spriteID: 92d7586dda5f255d0800000000000000
+      internalID: -3075125468563407575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_9
+      name: Turq Spritesheet_9
       rect:
         serializedVersion: 2
         x: 4800
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -510,19 +510,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe81dc6425c09250800000000000000
-      internalID: 5949471867991592638
+      spriteID: e10646ba0d7db2cc0800000000000000
+      internalID: -3734654174745042914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_10
+      name: Turq Spritesheet_10
       rect:
         serializedVersion: 2
         x: 6400
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -531,19 +531,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec958dfe31b280980800000000000000
-      internalID: -8572554526071432754
+      spriteID: 4f8df2d6352987090800000000000000
+      internalID: -8036512648030856972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_11
+      name: Turq Spritesheet_11
       rect:
         serializedVersion: 2
         x: 8000
         y: 9000
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -552,19 +552,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7af68a63f9a2c1ee0800000000000000
-      internalID: -1289108530029629529
+      spriteID: 066fa94e4edebd790800000000000000
+      internalID: -7504142786739112352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_12
+      name: Turq Spritesheet_12
       rect:
         serializedVersion: 2
         x: 0
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -573,19 +573,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e2690ee2d93bf090800000000000000
-      internalID: -7999736734994046239
+      spriteID: 425c2ecd146477230800000000000000
+      internalID: 3636452472817632548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_13
+      name: Turq Spritesheet_13
       rect:
         serializedVersion: 2
         x: 1600
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -594,19 +594,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e49786b8210ff5490800000000000000
-      internalID: -7755216070869747378
+      spriteID: 71f288c9bcf4619d0800000000000000
+      internalID: -2803965982068429033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_14
+      name: Turq Spritesheet_14
       rect:
         serializedVersion: 2
         x: 3200
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -615,19 +615,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e51c232b4b639f30800000000000000
-      internalID: 4581123216422737380
+      spriteID: f943716d0298a6c00800000000000000
+      internalID: 894678250110268575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_15
+      name: Turq Spritesheet_15
       rect:
         serializedVersion: 2
         x: 4800
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -636,19 +636,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0c9110b9ca0bae50800000000000000
-      internalID: 6821557921941396495
+      spriteID: 08b28770794e1c670800000000000000
+      internalID: 8557372104297163648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_16
+      name: Turq Spritesheet_16
       rect:
         serializedVersion: 2
         x: 6400
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -657,19 +657,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d069152eee2c0220800000000000000
-      internalID: 2453387497369592018
+      spriteID: de283086a1f42edb0800000000000000
+      internalID: -4764158480971758867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_17
+      name: Turq Spritesheet_17
       rect:
         serializedVersion: 2
         x: 8000
         y: 8100
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -678,19 +678,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc6ac9141c7ff3250800000000000000
-      internalID: 5926728044044396235
+      spriteID: 07dd644afecdf5180800000000000000
+      internalID: -9124331398217933456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_18
+      name: Turq Spritesheet_18
       rect:
         serializedVersion: 2
         x: 0
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -699,19 +699,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1fe2ea5cace75860800000000000000
-      internalID: 7518738327921684250
+      spriteID: b8fdf59bfb40ba0b0800000000000000
+      internalID: -5716470080521379957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_19
+      name: Turq Spritesheet_19
       rect:
         serializedVersion: 2
         x: 1600
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -720,19 +720,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9316e5852dbcbf800800000000000000
-      internalID: 647335075743949113
+      spriteID: a140d387b1fac37b0800000000000000
+      internalID: -5243123333649857510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_20
+      name: Turq Spritesheet_20
       rect:
         serializedVersion: 2
         x: 3200
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -741,19 +741,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 001aae320646cdfd0800000000000000
-      internalID: -2315865744293060352
+      spriteID: 0349c7ff2ce386140800000000000000
+      internalID: 4713086017274156080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_21
+      name: Turq Spritesheet_21
       rect:
         serializedVersion: 2
         x: 4800
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -762,19 +762,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad87fe423c807da70800000000000000
-      internalID: 8851553226851317978
+      spriteID: 54d46aa7327c6ca60800000000000000
+      internalID: 7694055968604572997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_22
+      name: Turq Spritesheet_22
       rect:
         serializedVersion: 2
         x: 6400
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -783,19 +783,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af4c2b329404473d0800000000000000
-      internalID: -3209869951532612358
+      spriteID: bb986fc8d1e773a00800000000000000
+      internalID: 736195729482484155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_23
+      name: Turq Spritesheet_23
       rect:
         serializedVersion: 2
         x: 8000
         y: 7200
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -804,19 +804,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 896005a49d7790b60800000000000000
-      internalID: 7712827611987052184
+      spriteID: 7ef07aa1089c35d90800000000000000
+      internalID: -7110117834647728153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_24
+      name: Turq Spritesheet_24
       rect:
         serializedVersion: 2
         x: 0
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -825,19 +825,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 874bb306c8fd36880800000000000000
-      internalID: -8618799467854056328
+      spriteID: bc0b8a918e64677c0800000000000000
+      internalID: -4073990850233192245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_25
+      name: Turq Spritesheet_25
       rect:
         serializedVersion: 2
         x: 1600
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -846,19 +846,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89a8993810f509d00800000000000000
-      internalID: 977385579246881432
+      spriteID: 03cb71387bf3b75f0800000000000000
+      internalID: -757942054870860752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_26
+      name: Turq Spritesheet_26
       rect:
         serializedVersion: 2
         x: 3200
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -867,19 +867,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4bff598afc54010800000000000000
-      internalID: 1172571600977900774
+      spriteID: 1a711ecedd001daf0800000000000000
+      internalID: -373516340933093471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_27
+      name: Turq Spritesheet_27
       rect:
         serializedVersion: 2
         x: 4800
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -888,19 +888,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89a2e82e687738680800000000000000
-      internalID: -8754021829467821416
+      spriteID: a193ae06c17dd08e0800000000000000
+      internalID: -1725486565328013030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_28
+      name: Turq Spritesheet_28
       rect:
         serializedVersion: 2
         x: 6400
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -909,19 +909,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 115acb4cf3aff7110800000000000000
-      internalID: 1261001572477609233
+      spriteID: fa39e37aee6245aa0800000000000000
+      internalID: -6173266382768139345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_29
+      name: Turq Spritesheet_29
       rect:
         serializedVersion: 2
         x: 8000
         y: 6300
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -930,19 +930,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6b6a1710431a420800000000000000
-      internalID: 2639448037422184117
+      spriteID: d263d53c4a6f20800800000000000000
+      internalID: 577294889769580077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_30
+      name: Turq Spritesheet_30
       rect:
         serializedVersion: 2
         x: 0
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -951,19 +951,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f90c5ed035b11f90800000000000000
-      internalID: -6984602325581297163
+      spriteID: 934bc9dc7cee9b7e0800000000000000
+      internalID: -1749104438341225415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_31
+      name: Turq Spritesheet_31
       rect:
         serializedVersion: 2
         x: 1600
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -972,19 +972,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02d51b296f87ab090800000000000000
-      internalID: -8017963186161361632
+      spriteID: 0b96ef87a66261f40800000000000000
+      internalID: 5698784617222269360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_32
+      name: Turq Spritesheet_32
       rect:
         serializedVersion: 2
         x: 3200
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -993,19 +993,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 619fd64b6ca8dd190800000000000000
-      internalID: -7936034382321682154
+      spriteID: edd0673ad116b1100800000000000000
+      internalID: 79764198333484510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_33
+      name: Turq Spritesheet_33
       rect:
         serializedVersion: 2
         x: 4800
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1014,19 +1014,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbdafa964f899abd0800000000000000
-      internalID: -2618393532826669636
+      spriteID: 1f5881a28e294ff10800000000000000
+      internalID: 2302626835329484273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_34
+      name: Turq Spritesheet_34
       rect:
         serializedVersion: 2
         x: 6400
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1035,19 +1035,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff9a90d1ae6f276f0800000000000000
-      internalID: -688216307664311809
+      spriteID: 7e28343f730c98740800000000000000
+      internalID: 5154862595039265511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_35
+      name: Turq Spritesheet_35
       rect:
         serializedVersion: 2
         x: 8000
         y: 5400
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1056,19 +1056,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1abd253b9f204850800000000000000
-      internalID: 6359135017505765919
+      spriteID: ba186b77fe397a690800000000000000
+      internalID: -7590935990194765397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_36
+      name: Turq Spritesheet_36
       rect:
         serializedVersion: 2
         x: 0
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1077,19 +1077,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b32bd8cb1211f3760800000000000000
-      internalID: 7439683946034344507
+      spriteID: 72b04a583c98c5e10800000000000000
+      internalID: 2187774991848966951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_37
+      name: Turq Spritesheet_37
       rect:
         serializedVersion: 2
         x: 1600
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1098,19 +1098,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 531b7e8ca85ca3110800000000000000
-      internalID: 1241521847160779061
+      spriteID: dff302a8752adc7f0800000000000000
+      internalID: -590637479252443139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_38
+      name: Turq Spritesheet_38
       rect:
         serializedVersion: 2
         x: 3200
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1119,19 +1119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7d0fac76fc860b90800000000000000
-      internalID: -7275973157688767110
+      spriteID: 3959409926aae7be0800000000000000
+      internalID: -1477556287280212589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_39
+      name: Turq Spritesheet_39
       rect:
         serializedVersion: 2
         x: 4800
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1140,19 +1140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a70cbb17dd5435930800000000000000
-      internalID: 4130722100627095674
+      spriteID: ff4b770a7f6149f30800000000000000
+      internalID: 4581311973747569919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_40
+      name: Turq Spritesheet_40
       rect:
         serializedVersion: 2
         x: 6400
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1161,19 +1161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1560c3446a4ea6af0800000000000000
-      internalID: -402257813935749551
+      spriteID: 1846a52687835d220800000000000000
+      internalID: 2509974457026241665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_41
+      name: Turq Spritesheet_41
       rect:
         serializedVersion: 2
         x: 8000
         y: 4500
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1182,19 +1182,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 826afc86117736130800000000000000
-      internalID: 3558819047209412136
+      spriteID: a1f0e2ea8feb03f00800000000000000
+      internalID: 1094584684734451482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_42
+      name: Turq Spritesheet_42
       rect:
         serializedVersion: 2
         x: 0
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1203,19 +1203,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7375521214fea8bb0800000000000000
-      internalID: -4932867378822949065
+      spriteID: dcc1bf82bcee87410800000000000000
+      internalID: 1475191434297154765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_43
+      name: Turq Spritesheet_43
       rect:
         serializedVersion: 2
         x: 1600
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1224,19 +1224,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa98c90df1709360800000000000000
-      internalID: 7174359538006006441
+      spriteID: 43ff6d3eb57415fc0800000000000000
+      internalID: -3507944174754791628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_44
+      name: Turq Spritesheet_44
       rect:
         serializedVersion: 2
         x: 3200
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1245,19 +1245,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f2c728ec16b3c950800000000000000
-      internalID: 6468213725104423670
+      spriteID: 7b8fd079fdd39e650800000000000000
+      internalID: 6262604787356661943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_45
+      name: Turq Spritesheet_45
       rect:
         serializedVersion: 2
         x: 4800
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1266,19 +1266,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e99df612630ec22d0800000000000000
-      internalID: -3302017903675582050
+      spriteID: b02944f364bcc2f20800000000000000
+      internalID: 3399315321327489547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_46
+      name: Turq Spritesheet_46
       rect:
         serializedVersion: 2
         x: 6400
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1287,19 +1287,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58f4ef0a413a54ca0800000000000000
-      internalID: -6033236816797216891
+      spriteID: fbbd3273a19cbbf10800000000000000
+      internalID: 2286642350252088255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_47
+      name: Turq Spritesheet_47
       rect:
         serializedVersion: 2
         x: 8000
         y: 3600
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1308,19 +1308,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8d78fe44f7026520800000000000000
-      internalID: 2693724272999300492
+      spriteID: 885511ee8f7c24e30800000000000000
+      internalID: 4486368050774365576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_48
+      name: Turq Spritesheet_48
       rect:
         serializedVersion: 2
         x: 0
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1329,19 +1329,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd072fe426351c9e0800000000000000
-      internalID: -1602908310670774051
+      spriteID: e5cd0ac725b9d4760800000000000000
+      internalID: 7443776537693838430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_49
+      name: Turq Spritesheet_49
       rect:
         serializedVersion: 2
         x: 1600
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1350,19 +1350,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a141d71f96dfcad0800000000000000
-      internalID: -2679687274474421853
+      spriteID: dd83619cf479b54d0800000000000000
+      internalID: -3144753545856272163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_50
+      name: Turq Spritesheet_50
       rect:
         serializedVersion: 2
         x: 3200
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1371,19 +1371,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2727adf04801070800000000000000
-      internalID: 8075099335499608814
+      spriteID: d63ae25532ccb2350800000000000000
+      internalID: 5993108181271618413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_51
+      name: Turq Spritesheet_51
       rect:
         serializedVersion: 2
         x: 4800
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1392,19 +1392,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19258dd2cc171f120800000000000000
-      internalID: 2445861194395308689
+      spriteID: 96c1142b4046f02d0800000000000000
+      internalID: -3310317229760766871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_52
+      name: Turq Spritesheet_52
       rect:
         serializedVersion: 2
         x: 6400
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1413,19 +1413,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4a6d7988f459f80800000000000000
-      internalID: -8100480906674395938
+      spriteID: 205ee8da02794b0e0800000000000000
+      internalID: -2255011346799205118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_53
+      name: Turq Spritesheet_53
       rect:
         serializedVersion: 2
         x: 8000
         y: 2700
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1434,19 +1434,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 646a1ddfae3f3e6e0800000000000000
-      internalID: -1809334434666535354
+      spriteID: c7ece1a968ce5f070800000000000000
+      internalID: 8139671964397522556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_54
+      name: Turq Spritesheet_54
       rect:
         serializedVersion: 2
         x: 0
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1455,19 +1455,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96c3d226e6b41e430800000000000000
-      internalID: 3810409697197767785
+      spriteID: a85b307d36ce2f260800000000000000
+      internalID: 7130021073634178442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_55
+      name: Turq Spritesheet_55
       rect:
         serializedVersion: 2
         x: 1600
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1476,19 +1476,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60167e1bc1a368580800000000000000
-      internalID: -8825302524867682042
+      spriteID: 8454a40eba79e0be0800000000000000
+      internalID: -1509102060664371896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_56
+      name: Turq Spritesheet_56
       rect:
         serializedVersion: 2
         x: 3200
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1497,19 +1497,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9898c21882b6c2c80800000000000000
-      internalID: -8346178187714328183
+      spriteID: 45e89b6de25ee8030800000000000000
+      internalID: 3498985949847195220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_57
+      name: Turq Spritesheet_57
       rect:
         serializedVersion: 2
         x: 4800
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1518,19 +1518,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fea89c105ee9e8b0800000000000000
-      internalID: -5122301073312665866
+      spriteID: 3f059529ae3258b80800000000000000
+      internalID: -8393262840150404877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_58
+      name: Turq Spritesheet_58
       rect:
         serializedVersion: 2
         x: 6400
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1539,19 +1539,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9df3bb20d0d32c60800000000000000
-      internalID: 7792301372786081179
+      spriteID: ca2c619d9bfd108b0800000000000000
+      internalID: -5187619306450009428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_59
+      name: Turq Spritesheet_59
       rect:
         serializedVersion: 2
         x: 8000
         y: 1800
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1560,19 +1560,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a0296d649a1ffe0800000000000000
-      internalID: -1156957507544806757
+      spriteID: ac222df3b641a99e0800000000000000
+      internalID: -1613955065594109238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_60
+      name: Turq Spritesheet_60
       rect:
         serializedVersion: 2
         x: 0
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1581,19 +1581,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4992ea6e13b2874e0800000000000000
-      internalID: -1983788142533138028
+      spriteID: 7ade68250254365d0800000000000000
+      internalID: -3070534515810701913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_61
+      name: Turq Spritesheet_61
       rect:
         serializedVersion: 2
         x: 1600
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1602,19 +1602,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8fdcf29348ea17a0800000000000000
-      internalID: -6405552143054610545
+      spriteID: 91f3dd65ab8e31340800000000000000
+      internalID: 4833462712117575449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_62
+      name: Turq Spritesheet_62
       rect:
         serializedVersion: 2
         x: 3200
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1623,19 +1623,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c16da72b51a2e970800000000000000
-      internalID: 8782759636205658568
+      spriteID: faea27ca0fc2f4290800000000000000
+      internalID: -7904049408814960977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_63
+      name: Turq Spritesheet_63
       rect:
         serializedVersion: 2
         x: 4800
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1644,19 +1644,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c6f63793be62c620800000000000000
-      internalID: 2792916436538291904
+      spriteID: b150ad2150b460bd0800000000000000
+      internalID: -2664359644379871973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_64
+      name: Turq Spritesheet_64
       rect:
         serializedVersion: 2
         x: 6400
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1665,19 +1665,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21e0e196c1847c640800000000000000
-      internalID: 5100124389880237586
+      spriteID: fcac68e18504702d0800000000000000
+      internalID: -3312608253694260529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_65
+      name: Turq Spritesheet_65
       rect:
         serializedVersion: 2
         x: 8000
         y: 900
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1686,19 +1686,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd1bbadd9a1f1b9d0800000000000000
-      internalID: -2760159384730619425
+      spriteID: eb550ab1a633dfcf0800000000000000
+      internalID: -216960676220873282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_66
+      name: Turq Spritesheet_66
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1707,19 +1707,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5dff26cb043e08a0800000000000000
-      internalID: -6337070400489390757
+      spriteID: ab64fbc3f035d0350800000000000000
+      internalID: 5984530804754040506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_67
+      name: Turq Spritesheet_67
       rect:
         serializedVersion: 2
         x: 1600
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1728,19 +1728,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b996bb3fd0723350800000000000000
-      internalID: 5994978158065392049
+      spriteID: 78f1ef1cd4cae37e0800000000000000
+      internalID: -1783798952425021561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_68
+      name: Turq Spritesheet_68
       rect:
         serializedVersion: 2
         x: 3200
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1749,19 +1749,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9fad3bf5c57177d0800000000000000
-      internalID: -2922425190002610274
+      spriteID: d449413315d3c43e0800000000000000
+      internalID: -2068210709911268275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_69
+      name: Turq Spritesheet_69
       rect:
         serializedVersion: 2
         x: 4800
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1770,19 +1770,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189b2483526ccbc40800000000000000
-      internalID: 5529512305664113025
+      spriteID: 301a67750443c7870800000000000000
+      internalID: 8681871632613417219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_70
+      name: Turq Spritesheet_70
       rect:
         serializedVersion: 2
         x: 6400
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1791,19 +1791,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adb0c36bb336d1f30800000000000000
-      internalID: 4547900306825677786
+      spriteID: dff9d0ac1bb6b87e0800000000000000
+      internalID: -1762196417842143235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowSpriteSheet_71
+      name: Turq Spritesheet_71
       rect:
         serializedVersion: 2
         x: 8000
         y: 0
-        width: 1600.8334
+        width: 1600
         height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1812,8 +1812,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cef94ab4e2c7582b0800000000000000
-      internalID: -5582919624776441876
+      spriteID: 256219bee7d888740800000000000000
+      internalID: 5154525349783086674
       vertices: []
       indices: 
       edges: []
@@ -1821,7 +1821,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6bffa8073cc0a4d4b80f3c93003b5f9e
+    spriteID: 5032f640148afd7468bff3a33d66cbba
     internalID: 0
     vertices: []
     indices: 
