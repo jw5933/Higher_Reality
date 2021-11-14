@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     public bool checkIsMoving{get{return isMoving;}}
 
     public Material mat{set{myRenderer.material = value;}}
+    public bool setcontrolEnabled{set{isControlEnabled = value;}}
     private void Awake()
     {
         //  initialize fields
@@ -46,15 +47,8 @@ public class PlayerMovement : MonoBehaviour
         pathfinder = FindObjectOfType<PathFinder>();
         graph = FindObjectOfType<Graph>();
         cursor = FindObjectOfType<Cursor>();
-        // myRenderer = GetComponent<Renderer>();
-        
-        // if (pathfinder != null)
-        // {
-        //     graph = pathfinder.GetComponent<Graph>();
-        // }
-
+        // isControlEnabled = true;
         isMoving = false;
-        isControlEnabled = true;
     }
 
     private void Start()
@@ -87,8 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnClick(Clickable clickable, Vector3 position){
         // Debug.Log("Should be handling click");
-        if (!isControlEnabled || clickable == null || pathfinder == null)
-        {
+        if (!isControlEnabled || clickable == null || pathfinder == null){
             return;
         }
 
@@ -100,8 +93,6 @@ public class PlayerMovement : MonoBehaviour
         // find the best path to the any Nodes under the Clickable; gives the user some flexibility
         List<Node> newPath = pathfinder.findPath(currNode, clickable.childNode);
         // Debug.Log("Curr node: " + currNode.name + " End node: " + clickable.childNode.name);
-        
-
 
         // if we have a valid path, follow it
         if (newPath.Count > 0){
@@ -132,13 +123,9 @@ public class PlayerMovement : MonoBehaviour
             updateAnimation(true);
 
             // loop through all Nodes
-            // while (path.Count > 0)
             for (int i = 0; i < path.Count; i++)
             {
-                // use the current Node as the next waypoint
                 nextNode = path[i];
-                // path.RemoveAt(0);
-
                 // aim at the Node after that to minimize flipping
                 int nextAimIndex = Mathf.Clamp(i + 1, 0, path.Count - 1);
                 Node aimNode = path[nextAimIndex];

@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Graph : MonoBehaviour
 {
-    private List<Node> allNodes = new List<Node>();
+    [SerializeField]private List<Node> allNodes = new List<Node>();
     Node[] arr;
 
     //let level designer set the distance check for neighbouring nodes

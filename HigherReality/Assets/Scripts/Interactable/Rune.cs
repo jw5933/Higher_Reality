@@ -5,6 +5,9 @@ using UnityEditor.Animations;
 
 public class Rune : MonoBehaviour
 {
+    //audio
+    [Range(0,2)]
+    [SerializeField] private int blockAudioLength; //0- short; 1 - medium; 2 - long
     [SerializeField]private AnimatorController myUIController;
     // public Motion motion{get{return myMotion;}}
     private GameObject nodeOrPlayer = null;
@@ -41,5 +44,9 @@ public class Rune : MonoBehaviour
         }
         else this.transform.localScale = myScale;
         
+    }
+    public void playSound(AudioManager am){
+        if(blockAudioLength < 3 && blockAudioLength>=0)
+            am.playBlockSound(blockAudioLength);
     }
 }

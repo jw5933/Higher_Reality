@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] bool togglePlatformColours;
     [SerializeField] private Animator runeAnimator;
+    [SerializeField] private Animator sceneAnimator;
+    [SerializeField] private AnimatorController endingAnimationController;
+    
     AudioManager audioManager;
     PlayerMovement player;
     [SerializeField]private Material playerDefaultMat;
@@ -18,29 +21,38 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Vector3 scaleDownBy = new Vector3(0.5f, 0.5f, 0.5f);
     public Vector3 scaleChange {get{return scaleDownBy;}}
     public Rune rune{get{return currRune;}}
+    private bool gameEnded;
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake(){
         audioManager = FindObjectOfType<AudioManager>();
         player = FindObjectOfType<PlayerMovement>();
         camSystem = FindObjectOfType<CamSwap>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        currNode = player.node;
+        if(gameEnded) return;
         if (Input.GetKeyDown(KeyCode.Space)){
-            currNode = player.node;
             currRune = player.rune;
 
             interactWithRune();
         }
         else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)){
-            currNode = player.node;
             currRune = player.rune;
             checkRune();
+        }
+    }
+
+    private void LateUpdate(){
+        if (!gameEnded && currNode?.tag == "Finish"){
+            gameEnded = true;
+            audioManager.playEndingSound();
+            player.setcontrolEnabled = false;
+            sceneAnimator.runtimeAnimatorController = endingAnimationController;
+            sceneAnimator.enabled = true;
         }
     }
 
@@ -64,7 +76,7 @@ public class GameManager : MonoBehaviour
             
             //set the player's material to the rune's colour
             player.mat = currRune.playerMaterial;
-        changeInteractableColour(currRune, (currRune.platformMaterial != null? currRune.platformMaterial: currRune.playerMaterial));
+            changeInteractableColour(currRune, (currRune.platformMaterial != null? currRune.platformMaterial: currRune.playerMaterial));
 
             audioManager.playRuneSound(0);
             currRune.moveTo(player.runePos, true);
@@ -73,13 +85,11 @@ public class GameManager : MonoBehaviour
 
     void interactWithRune(){
         if (currNode == null || currRune == null) return;
-        // if(currNode.tag == currRune.tag){
+            currRune.playSound(audioManager);
             foreach (Node n in currRune.interactableGroup){
-                Debug.Log(n.name);
+                // Debug.Log(n.name);
                 n.moveToNext();
-                n.playSound(audioManager);
-            }
-        // }
+            } 
     }
 
     void handleDrop(){
@@ -119,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     public void playRuneAnim(AnimatorController newController){
         // Debug.Log(newMotion);
+        if (runeAnimator == null) return;
         runeAnimator.runtimeAnimatorController = newController;
         runeAnimator.SetTrigger("runeUI");
     }

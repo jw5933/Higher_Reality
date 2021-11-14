@@ -8,8 +8,8 @@ public class VirtualCamSwap : MonoBehaviour
     Canvas runeCanvas;
     int camSaved = 0;
     [SerializeField] List<GameObject> allCams;
-    List <CinemachineVirtualCamera> virtualCams;
-    [SerializeField] GameManager gameManager;
+    List <CinemachineVirtualCamera> virtualCams = new List<CinemachineVirtualCamera>();
+    GameManager gameManager;
 
     int currCam = 0;
     int prevCam = 0;
@@ -19,6 +19,7 @@ public class VirtualCamSwap : MonoBehaviour
 
     void Awake(){
         runeCanvas = FindObjectOfType<Canvas>();
+        gameManager = FindObjectOfType<GameManager>();
         runes = FindObjectsOfType<Rune>();
         foreach(GameObject o in allCams){
             virtualCams.Add(o.GetComponent<CinemachineVirtualCamera>());
