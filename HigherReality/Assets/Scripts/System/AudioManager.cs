@@ -19,9 +19,8 @@ public class AudioManager : MonoBehaviour
     [Header("Player")]
     [Tooltip("playerAudio source should have playerMovement sounds attached; looped")]
     [SerializeField] private AudioSource playerAudio;
-    
-
-    private AudioSource backgroundAudio;
+    [SerializeField] private AudioSource clickAudio;
+    [SerializeField] private AudioSource levelAudio;
 
     private void Awake(){
         // playerAudio.Pause();
@@ -56,5 +55,13 @@ public class AudioManager : MonoBehaviour
     public void playRuneSound(int n){
         if(n == 0) runeAudio.PlayOneShot(runePickUp, 1f);
         else runeAudio.PlayOneShot(runeDrop, 1f);
+    }
+
+    public void playClickerSound(){
+        if (clickAudio != null) clickAudio.PlayOneShot(clickAudio.clip, 1f);
+    }
+
+    public void playEndingSound(){
+        levelAudio.Play();
     }
 }
