@@ -29,9 +29,6 @@ public class Node : MonoBehaviour
     private int c; //used for bfs: 0 - white; 1 - grey; 2 - black
     private Node pi; //used to find the path -> predecessor node
 
-    //audio
-    [SerializeField] private int blockLength; //0- short; 1 - medium; 2 - long
-
     //getters + setters
     public Rune rune{get{return myRune;} set{myRune = value;}}
     public GameObject getObject{get{return this.gameObject;}}
@@ -109,11 +106,6 @@ public class Node : MonoBehaviour
                 n.neighbours.Add(this);
             }
         }
-    }
-
-    public void playSound(AudioManager am){
-        if(blockLength < 3 && blockLength>=0)
-            am.playBlockSound(blockLength);
     }
 
 
