@@ -48,11 +48,11 @@ public class Node : MonoBehaviour
     private void Start(){
         if (positions.Count != 0){
             findConnections();
-            foreach (Node n in connections){
-                if (n!= null) {
-                    n.tag = this.tag;
-                }
-            }
+            // foreach (Node n in connections){
+            //     if (n!= null) {
+            //         n.tag = this.tag;
+            //     }
+            // }
         }
     }
 

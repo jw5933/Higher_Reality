@@ -24,4 +24,8 @@ public class UIAlpha : MonoBehaviour
         player.setcontrolEnabled = true;
         if (sceneAnimator != null) sceneAnimator.enabled = false;
     }
+
+    public void stopSceneAnim(){
+        sceneAnimator.speed = 0;
+    }
 }

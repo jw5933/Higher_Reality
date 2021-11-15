@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private Rune myRune;
     [SerializeField] private Transform runeTransform;
     [SerializeField] private Renderer myRenderer;
+    private AudioManager am;
 
     // get-sets
     public Vector3 runePos{get{return runeTransform.position;}}
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         pathfinder = FindObjectOfType<PathFinder>();
         graph = FindObjectOfType<Graph>();
         cursor = FindObjectOfType<Cursor>();
+        am = FindObjectOfType<AudioManager>();
         // isControlEnabled = true;
         isMoving = false;
     }
@@ -97,8 +99,10 @@ public class PlayerMovement : MonoBehaviour
         // if we have a valid path, follow it
         if (newPath.Count > 0){
             // show a marker for the mouse click
-            if (cursor != null)
+            if (cursor != null){
+                am.playClickerSound();
                 cursor.showCursor(position, true);
+            }
             StartCoroutine(followPathRoutine(newPath));
         }
         else{
