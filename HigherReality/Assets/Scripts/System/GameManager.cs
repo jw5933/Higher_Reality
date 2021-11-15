@@ -5,6 +5,7 @@ using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Camera mainCam;
     [SerializeField] bool togglePlatformColours;
     [SerializeField] private Animator runeAnimator;
     [SerializeField] private Animator sceneAnimator;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Vector3 scaleChange {get{return scaleDownBy;}}
     public Rune rune{get{return currRune;}}
     private bool gameEnded;
+    private bool gameStarted;
 
     // Start is called before the first frame update
     void Awake(){
@@ -31,10 +33,29 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        currNode = player.node;
+    void Update(){
+        //if the game has ended, do not run update
         if(gameEnded) return;
+
+        //starting anim
+        if (!gameStarted){
+            Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Input.GetMouseButtonDown(0)){
+                 if (Physics.Raycast(ray, out hit)){
+                    Transform obj = hit.transform;
+                    if (obj.tag == "start"){
+                        obj.gameObject.SetActive(false);
+                        sceneAnimator.speed = 1;
+                        gameStarted = true;
+                    }
+                 }
+            }
+            return;
+        }
+
+        currNode = player.node;
         if (Input.GetKeyDown(KeyCode.Space)){
             currRune = player.rune;
 
@@ -49,10 +70,10 @@ public class GameManager : MonoBehaviour
     private void LateUpdate(){
         if (!gameEnded && currNode?.tag == "Finish"){
             gameEnded = true;
-            audioManager.playEndingSound();
             player.setcontrolEnabled = false;
             sceneAnimator.runtimeAnimatorController = endingAnimationController;
             sceneAnimator.enabled = true;
+            audioManager.playEndingSound();
         }
     }
 
@@ -99,6 +120,7 @@ public class GameManager : MonoBehaviour
             swapDrop(); //cannot drop the rune if there is already one there
             return;
         }
+        runeAnimator.SetBool("runeUI", false);
         currNode.rune = currRune;
         player.rune = null;
         currRune.currObj = currNode.gameObject;
@@ -131,7 +153,7 @@ public class GameManager : MonoBehaviour
         // Debug.Log(newMotion);
         if (runeAnimator == null) return;
         runeAnimator.runtimeAnimatorController = newController;
-        runeAnimator.SetTrigger("runeUI");
+        runeAnimator.SetBool("runeUI", true);
     }
 
     void changeInteractableColour(Rune r, Material m){
