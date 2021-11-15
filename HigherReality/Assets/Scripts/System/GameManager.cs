@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+// using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool togglePlatformColours;
     [SerializeField] private Animator runeAnimator;
     [SerializeField] private Animator sceneAnimator;
-    [SerializeField] private AnimatorController endingAnimationController;
+    [SerializeField] private RuntimeAnimatorController endingAnimationController;
     
     AudioManager audioManager;
     PlayerMovement player;
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         temp.moveTo(currNode.transform.position, false);
     }
 
-    public void playRuneAnim(AnimatorController newController){
+    public void playRuneAnim(RuntimeAnimatorController newController){
         // Debug.Log(newMotion);
         if (runeAnimator == null) return;
         runeAnimator.runtimeAnimatorController = newController;

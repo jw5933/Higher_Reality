@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+// using UnityEditor.Animations;
 
 public class Rune : MonoBehaviour
 {
     //audio
     [Range(0,2)]
     [SerializeField] private int blockAudioLength; //0- short; 1 - medium; 2 - long
-    [SerializeField]private AnimatorController myUIController;
+    [SerializeField]private RuntimeAnimatorController myUIController;
     // public Motion motion{get{return myMotion;}}
     private GameObject nodeOrPlayer = null;
     // [SerializeField] private GameObject myRuneObj;
